@@ -24,6 +24,8 @@ urlpatterns = [
     #to announcementWall app
     path('announcementWall/', include('announcementWall.urls')),
     
+    path('eventCalendar/', include('eventCalendar.urls')),
+
     #to admin site
     path('admin/', admin.site.urls),
 ]
