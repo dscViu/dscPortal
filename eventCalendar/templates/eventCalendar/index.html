@@ -1,13 +1,5 @@
-
-{% if wallpost_list %}
-   <ul>
-   {% for dscevent in dscevent_list %}
-   <li><a href="{% url 'announcementWall:detail' wallpost.id %}">{{ dscevent.dscevent_title }} <em> ({{ dscevent.dscevent_date  }})</em></a></li>
-
-
-   {% endfor %}
-   </ul>
-{% else %}
-   <p> <center> No Events Yet! </center></p>
-
-{% endif %}
+<ul>
+{% for item in cal %}
+<li>{{ item }}</li>
+{% endfor %}
+</ul>
