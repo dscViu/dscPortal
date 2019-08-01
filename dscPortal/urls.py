@@ -19,7 +19,7 @@ from django.urls import path, include
 #creating url patterns
 urlpatterns = [
     #to website index     
-#    path('', include('announcementWall.urls')),
+    path('', include('announcementWall.urls')),
     
     #to announcementWall app
     path('announcementWall/', include('announcementWall.urls')),

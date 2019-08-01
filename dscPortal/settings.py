@@ -11,10 +11,20 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+
+#added for heroku
 import django_heroku
+#added for heroku sqlite local and postgres remote
+import dj_database_url
+import dotenv
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# Added for heroku to use postgres remote and sqlite locally
+dotenv_file = os.path.join(BASE_DIR, ".env")
+if os.path.isfile(dotenv_file):
+    dotenv.load_dotenv(dotenv_file)
 
 
 # Quick-start development settings - unsuitable for production
@@ -44,6 +54,9 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    #added for heroku
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+    #
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -78,8 +91,12 @@ WSGI_APPLICATION = 'dscPortal.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd6u9sm6c19dd1m',
+        'USER' : 'nqkeiiupsniiho',
+        'PASSWORD' : '87c97d0472f6312b2acc807811edadecd68b6be0385ede7b9fd99e71e1b2e0c7',
+        'HOST' : 'ec2-54-221-238-248.compute-1.amazonaws.com',
+        'PORT' : '5432',
     }
 }
 
@@ -120,13 +137,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-#PREV
-#STATIC_URL = '/static/'
-
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 #added for heroku
 django_heroku.settings(locals())
 
+#added for heroku
+#del DATABASES['default']['OPTIONS']['sslmode']
