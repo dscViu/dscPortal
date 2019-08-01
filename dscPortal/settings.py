@@ -88,8 +88,16 @@ WSGI_APPLICATION = 'dscPortal.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-DATABASES = {}
-DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd6u9sm6c19dd1m',
+        'USER' : 'nqkeiiupsniiho',
+        'PASSWORD' : '87c97d0472f6312b2acc807811edadecd68b6be0385ede7b9fd99e71e1b2e0c7',
+        'HOST' : 'ec2-54-221-238-248.compute-1.amazonaws.com',
+        'PORT' : '5432',
+    }
+}
 
 
 # Password validation
@@ -138,4 +146,4 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 django_heroku.settings(locals())
 
 #added for heroku
-del DATABASES['default']['OPTIONS']['sslmode']
+#del DATABASES['default']['OPTIONS']['sslmode']
