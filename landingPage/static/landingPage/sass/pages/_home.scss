@@ -1,0 +1,40 @@
+/* Page specific code goes in this file */
+.section-about {
+  background-color: $color-grey-light-1;
+  padding: 25rem 0;
+  margin-top: -20vh;
+}
+
+.section-features {
+  padding: 20rem 0;
+  background-image: linear-gradient(to right bottom,
+    rgba($color-primary, 0.8),
+    rgba($color-primary-light, 0.8),
+    rgba($color-primary-dark, 0.8)),
+    url(../img/feature-section.jpg);
+  background-size: cover;
+  
+  // Another way to give a non-rectangular
+  // view other than clip
+  // skew whole dection
+  transform: skewY(-7deg);
+  // up to cover the gap
+  margin-top: -11rem;
+  
+  // select all direct children of section features
+  // and skew in the opposite direction
+  & > * {
+    transform: skewY(7deg);
+  }
+}
+
+.section-members {
+  background-color: $color-grey-light-1;
+  padding: 25rem 0 15rem 0;
+  margin-top: -11rem;
+}
+
+.section-updates {
+  padding: 15rem 0;
+  background-color: $color-grey-light-1;
+}

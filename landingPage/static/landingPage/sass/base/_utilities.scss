@@ -1,0 +1,18 @@
+/*  This file is for reusable helper classes
+ *  If you are familar with any CSS framworks
+ *  like Bootstrap, mb-10 is a utillity that
+ *  puts 10px of padding on the bottom margin.
+ *  Those types of classes will be defined here,
+ *  so we can have rapid uniform development,
+ *  which will make it especially easy to 
+ *  mold this front end to the future Django
+ *  implementations.
+ * */
+
+.u-center-text { text-align: center; }
+
+.u-margin-bottom-small { margin-bottom: 1.5rem; }
+.u-margin-bottom-medium { margin-bottom: 4rem; }
+.u-margin-bottom-big { margin-bottom: 8rem; }
+
+

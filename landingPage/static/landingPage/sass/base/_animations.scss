@@ -1,0 +1,49 @@
+/* Animations that will happen when the page loads 
+ * for the section: header
+ * */
+@keyframes moveInLeft {
+  /* Start */
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  /* middle */
+  80%  {
+   transform: translateX(20px);
+  } 
+  /* Finish */
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  /* Start */
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  /* middle */
+  80%  {
+   transform: translateX(-20px);
+  } 
+  /* Finish */
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInButton {
+  /* Start */
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  /* Finish */
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}

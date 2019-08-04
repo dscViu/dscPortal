@@ -1,0 +1,42 @@
+.header {
+  /* 95% of the viewport height */
+  height: 95vh;
+  /* specify gradient color and image */
+  background-image: linear-gradient(to right bottom,
+    rgba($color-primary, 0.8),
+    rgba($color-primary-light, 0.8),
+    rgba($color-primary-dark, 0.8)),
+    url(../img/hero.jpg);
+
+  background-size: cover;
+  /* set position top so the top of the image 
+   * sticks in one place
+   * when resize happens
+   * */
+  background-position: top;
+  position: relative;
+  // add webkit for browser compatibility
+  /*                 x y, x y, x y, */
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh,0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 75vh,0 100%);
+
+  &__logo-box {
+    /* put the logo at the top left corner */
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+  }
+
+  &__logo {
+    height: 3.5rem;
+  }
+
+  &__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+}
+

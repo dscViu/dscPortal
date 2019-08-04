@@ -6,7 +6,6 @@ from .models import WallPost
 
 # Create your views here.
 
-""" testing Hello World """
 def index(request):
     wallpost_list = WallPost.objects.order_by('-pub_date')
     template = loader.get_template('announcementWall/index.html')
