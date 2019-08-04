@@ -42,6 +42,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'landingPage.apps.LandingpageConfig',
     'announcementWall.apps.AnnouncementwallConfig',
     'eventCalendar.apps.EventcalendarConfig',
     'django.contrib.admin',

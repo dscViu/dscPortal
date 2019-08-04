@@ -1,0 +1,9 @@
+// Reusable code, mixins are similar to functions
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    // clear both floats
+    clear: both;
+  }
+}

@@ -1,0 +1,174 @@
+.card {
+
+  // Basic Card Functionality
+  perspective: 150rem;
+  // for firefox
+  -moz-perspective: 150rem;
+  position: relative;
+  height: 52rem;
+
+  &__side {
+    // must set height in both places
+    height: 52rem;
+    transition: all 1.5s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    // hide the backside of an element
+    backface-visibility: hidden;
+    border-radius: 3px;
+    // add overflow: hidden so picture doesnt
+    // overlap our rounded corners
+    overflow: hidden;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+
+    &--front {
+    background-color: $color-white;
+    }
+
+    // color for back of card
+    &--back {
+    background-color: green;
+    transform: rotatey(180deg);
+
+      &-1 {
+        background-image: linear-gradient(to right bottom,
+        $color-warning, $color-warning-light, $color-warning-dark);
+      }
+
+      &-2 {
+        background-image: linear-gradient(to right bottom,
+        $color-success, $color-success-light, $color-success-dark);
+      }
+
+      &-3 {
+        background-image: linear-gradient(to right bottom,
+        $color-secondary, $color-secondary-light, $color-secondary-dark);
+      }
+
+    }
+  }
+
+  &:hover &__side--front {
+    transform: rotatey(-180deg);
+  }
+
+  &:hover &__side--back {
+    transform: rotateY(0);
+  }
+
+  
+  // Card Front Styling
+  &__picture {
+    background-size: cover;
+    height: 23rem;
+    background-blend-mode: soft-light;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+
+    &--1 {
+      background-image: linear-gradient(to right bottom,
+      $color-warning, $color-warning-light, $color-warning-dark),
+      url(../img/lenz.jpg);
+    }
+
+    &--2 {
+      background-image: linear-gradient(to right bottom,
+      $color-success, $color-success-light, $color-success-dark),
+      url(../img/phill.jpg);
+
+    }
+
+    &--3 {
+      background-image: linear-gradient(to right bottom,
+      $color-secondary, $color-secondary-light, $color-secondary-dark),
+      url(../img/matt.png);
+    }
+
+  }
+
+  &__heading {
+    font-size: 2.5rem;
+    font-weight: 300;
+    text-align: right;
+    text-transform: uppercase;
+    color: $color-white;
+    position: absolute;
+    top: 15rem;
+    right: 2rem;
+    width: 45%;
+  }
+
+  &__heading-span {
+    padding: 1rem 1.5rem;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+
+    &--1 {
+      background-image: linear-gradient(to right bottom,
+        rgba($color-warning-light, .85),
+        rgba($color-warning-dark, .85));
+    }
+
+    &--2 {
+      background-image: linear-gradient(to right bottom,
+        rgba($color-success-light, .85),
+        rgba($color-success-dark, .85));
+    }
+
+    &--3 {
+      background-image: linear-gradient(to right bottom,
+        rgba($color-secondary-light, .85),
+        rgba($color-secondary-dark, .85));
+    }
+  }
+  
+  &__details {
+    padding: 3rem;
+    ul {
+      list-style: none;
+      width: 80%;
+      margin: 0 auto;
+
+      li {
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem;
+
+        &:not(:last-child) {
+          border-bottom: 1px solid $color-grey-light-2;
+        }
+      }
+    }
+  }
+
+  // Back Side Styling
+  //card--cta"> call to action
+  //card__icon-box
+  //card__icon-text
+  //card__icon-text-2
+  &--cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  &__icon-box {
+    text-align: center;
+    margin-bottom: 8rem;
+    color: $color-white;
+  }
+
+  &__icon-text {
+    font-size: 5rem;
+    font-weight: 300;
+  }
+
+  &__icon-text-2 {
+    // temp code
+    font-size: 1.5rem;
+    text-transform: uppercase;
+  }
+}
