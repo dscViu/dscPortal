@@ -1,3 +1,6 @@
+
+{% load static %}
+
 <!DOCTYPE html>
 <!--
 Developed by the:
@@ -43,9 +46,9 @@ Developed by the:
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
-  <link rel="stylesheet" href="css/icon-font.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+  <link rel="stylesheet" href="{% static 'landingPage/css/icon-font.css' %} ">
+  <link rel="stylesheet" href="{% static 'landingPage/css/style.css' %} ">
+  <link rel="shortcut icon" type="image/png" href="{% static 'landingPage/img/favicon.png' %} ">
   <title>V.I.U Developer Student Club</title>
 </head>
 
@@ -53,7 +56,7 @@ Developed by the:
    <!-------------------------- Hero section  --------------------------------->
     <header class="header">
       <div class="header__logo-box">
-        <img class="header__logo" src="img/logo-white.png" alt="Logo">
+	      <img class="header__logo" src="{% static "landingPage/img/logo-white.png" %}" alt="Logo">
       </div>
 
       <div class="header__text-box">
@@ -100,11 +103,11 @@ Developed by the:
           <div class="col-1-of-2">
             <div class="composition">
               <img class="composition__photo composition__photo--p1" 
-                  src="img/nat-1-large.jpg" alt="photo 1">
+	      src="{% static "landingPage/img/nat-1-large.jpg" %}" alt="photo 1">
               <img class="composition__photo composition__photo--p2"
-                  src="img/nat-2-large.jpg" alt="photo 2">
+		   src="{% static "landingPage/img/nat-2-large.jpg" %}" alt="photo 2">
               <img class="composition__photo composition__photo--p3"
-                  src="img/nat-3-large.jpg" alt="photo 3">
+		   src="{% static "landingPage/img/nat-3-large.jpg" %}" alt="photo 3">
             </div>
           </div>
         </div>
@@ -284,192 +287,48 @@ Developed by the:
             </div>
           </div>
         </div>
-
-        <!-- Second Row of Contact Cards  -->
-        <div class="row">
-          <!-- Card 4 -->
-          <div class="col-1-of-3">
-            <div class="card">
-              <div class="card__side card__side--front">
-                <div class="card__picture card__picture--4">
-                <!-- this means empty space -->
-                  &nbsp;
-                </div>
-                <h4 class="card__heading">
-                  <span class="card__heading-span card__heading-span--4">
-                    Bohdan Natsevych
-                  </span>
-                </h4>
-                <div class="card__details">
-                  <ul>
-                    <li>DSC Lead</li>
-                    <li>What Should</li>
-                    <li>We write</li>
-                    <li>in this</li>
-                    <li>description</li>
-                  </ul>
-                </div>
-              <!-- Back of Card -->
-              </div>
-              <div class="card__side card__side--back card__side--back-4">
-                <div class="card--cta">
-                  <div class="card__icon-box">
-                    <p class="card__icon-text">Contact</p>
-                    <p class="card__icon-text-2">Icons will go here</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 5 -->
-          <div class="col-1-of-3">
-            <div class="card">
-              <div class="card__side card__side--front">
-                <div class="card__picture card__picture--5">
-                <!-- this means empty space -->
-                  &nbsp;
-                </div>
-                <h4 class="card__heading">
-                  <span class="card__heading-span card__heading-span--5">
-                    Liam De Worde
-                  </span>
-                </h4>
-                <div class="card__details">
-                  <ul>
-                    <li>DSC Member</li>
-                    <li>What Should</li>
-                    <li>We write</li>
-                    <li>in this</li>
-                    <li>description</li>
-                  </ul>
-                </div>
-              </div>
-              <!-- Back of Card -->
-              <div class="card__side card__side--back card__side--back-5">
-                <div class="card--cta">
-                  <div class="card__icon-box">
-                    <p class="card__icon-text">Contact</p>
-                    <p class="card__icon-text-2">Icons will go here</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 6 -->
-          <div class="col-1-of-3">
-            <div class="card">
-              <div class="card__side card__side--front">
-                <div class="card__picture card__picture--6">
-                <!-- this means empty space -->
-                  &nbsp;
-                </div>
-                <h4 class="card__heading">
-                  <span class="card__heading-span card__heading-span--6">
-                    Faith Hewitt
-                  </span>
-                </h4>
-                <div class="card__details">
-                  <ul>
-                    <li>DSC Member</li>
-                    <li>What Should</li>
-                    <li>We write</li>
-                    <li>in this</li>
-                    <li>description</li>
-                  </ul>
-                </div>
-              </div>
-              <!-- Back of Card -->
-              <div class="card__side card__side--back card__side--back-6">
-                <div class="card--cta">
-                  <div class="card__icon-box">
-                    <p class="card__icon-text">Contact</p>
-                    <p class="card__icon-text-2">Icons will go here</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </section>
 
       <!-- Club Updates Section -->
       <section class="section-updates">
-        <div class="bg-video">
-          <!-- autoplay and loop are needed here -->
-          <video class="bg-video__content" autoplay loop>
-            <source src="img/video.webm" type="video/webm">
-            Your Browser is not supported
-          </video>
-        </div>
-
         <div class="u-center-text u-margin-bottom-big">
           <h2 class="heading-secondary">
             What we're up to
           </h2>
         </div>
-        
-        <!-- First Update -->
+	
+
+	<!-- TESTING calendar implementation django -->
+
+
+	{% for event in dscevent_list %}
+
         <div class="row">
           <div class="updates">
             <figure class="updates__shape">
-              <img class="updates__img" src="img/python.jpg"
-              alt="Django Updates">
-              <figcaption class="updates__caption">
-                Django Update
-              </figcaption>
-
+              
             </figure>
             <div class="updates__text">
-              <h3 class="heading-tertiary u-margin-bottom-small">
-                The Calender Updates from Django will go here
+              <h3 class="heading-tertiary margin-bottom-small">
+                
+		<!-- The Calender Updates from Django will go here --> 
+		{{ event.dscevent_title }}
               </h3>
-              <p>
-                Lorem unde deserunt esse nostrum dolorum dolores.
-                Praesentium tenetur obcaecati tempora facilis facilis.
-                Dignissimos possimus at aliquid expedita temporibus Sint.
+              <p> 
+
+	      {{ event.dscevent_date }}
+
               </p>
             </div>
           </div>
-        </div>
 
-        <!-- Second Update -->
-        <div class="row">
-          <div class="updates">
-            <figure class="updates__shape">
-              <img class="updates__img" src="img/django.jpg"
-              alt="Django Updates">
-              <figcaption class="updates__caption">
-                Django Update
-              </figcaption>
+        </div>
+	
+	{% endfor %}
+	<!-- END of test section for calendar implentation --> 
 
-            </figure>
-            <div class="updates__text">
-              <h3 class="heading-tertiary u-margin-bottom-small">
-                The Calender Updates from Django will go here
-              </h3>
-              <p>
-                Lorem unde deserunt esse nostrum dolorum dolores.
-                Praesentium tenetur obcaecati tempora facilis facilis.
-                Dignissimos possimus at aliquid expedita temporibus Sint.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="u-center-text u-margin-top-huge">
-          <a class="btn-text" href="#">See all updates</a>
-        </div>
       </section>
-      
-      <!--  Registration Form Section -->
-      <section class="section-register">
-        <div class="row">
-          <div class="register">
-            
-          </div>
-        </div>
-      </section>
+
     </main>
 
    <!-- 

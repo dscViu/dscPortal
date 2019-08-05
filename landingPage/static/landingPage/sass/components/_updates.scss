@@ -4,16 +4,60 @@
   width: 75%;
   margin: 0 auto;
   box-shadow: 0 3rem 6rem rgba($color-black, .1);
-  background-color: $color-white;
+  background-color: rgba($color-white, .7);
   border-radius: 3px;
   padding: 6rem;
+  padding-left: 9rem;
   font-size: $default-font-size;
+  transform: skewX(-12deg);
 
   &__shape {
-    background-color: $color-secondary;
+    // for shap outside to work,
+    // you must have a width, height and float defined
     width: 15rem;
     height: 15rem;
     float: left;
+    // first 50% is the radius
+    // shape outside causes the content the wrap around
+    // the actual circle
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%);
+    // clip path actually makes the circle
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    transform: translateX(-3rem) skewX(12deg);
+    position: relative;
+  }
+  
+  &__img {
+    height: 100%;
+    transition: all .5s;
+  }
 
+  &__text {
+    transform: skewX(12deg);
+  }
+  
+  &__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    color: $color-white;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    text-align: center;
+    opacity: 0;
+    transition: all .5s;
+  }
+
+  &:hover &__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+
+  &:hover &__img {
+    transfor: translateX(-4rem) scale(1);
+    filter: brightness(40%);
   }
 }

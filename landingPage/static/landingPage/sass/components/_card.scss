@@ -1,15 +1,14 @@
 .card {
-
   // Basic Card Functionality
   perspective: 150rem;
   // for firefox
   -moz-perspective: 150rem;
   position: relative;
-  height: 52rem;
+  height: 58rem;
 
   &__side {
     // must set height in both places
-    height: 52rem;
+    height: 58rem;
     transition: all 1.5s ease;
     position: absolute;
     top: 0;
@@ -44,7 +43,22 @@
 
       &-3 {
         background-image: linear-gradient(to right bottom,
+        $color-primary, $color-primary-light, $color-primary-dark);
+      }
+
+      &-4 {
+        background-image: linear-gradient(to right bottom,
         $color-secondary, $color-secondary-light, $color-secondary-dark);
+      }
+
+      &-5 {
+        background-image: linear-gradient(to right bottom,
+        $color-indigo, $color-indigo-light, $color-indigo-dark);
+      }
+
+      &-6 {
+        background-image: linear-gradient(to right bottom,
+        $color-pink, $color-pink-light, $color-pink-dark);
       }
 
     }
@@ -62,7 +76,7 @@
   // Card Front Styling
   &__picture {
     background-size: cover;
-    height: 23rem;
+    height: 30rem;
     background-blend-mode: soft-light;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
@@ -82,10 +96,27 @@
 
     &--3 {
       background-image: linear-gradient(to right bottom,
-      $color-secondary, $color-secondary-light, $color-secondary-dark),
+      $color-primary, $color-primary-light, $color-primary-dark),
       url(../img/matt.png);
     }
 
+    &--4 {
+      background-image: linear-gradient(to right bottom,
+      $color-secondary, $color-secondary-light, $color-secondary-dark),
+      url(../img/bohdan.png);
+    }
+
+    &--5 {
+      background-image: linear-gradient(to right bottom,
+      $color-indigo, $color-indigo-light, $color-indigo-dark),
+      url(../img/liam.jpg);
+    }
+
+    &--6 {
+      background-image: linear-gradient(to right bottom,
+      $color-pink, $color-pink-light, $color-pink-dark),
+      url(../img/faith.jpg);
+    }
   }
 
   &__heading {
@@ -95,7 +126,7 @@
     text-transform: uppercase;
     color: $color-white;
     position: absolute;
-    top: 15rem;
+    top: 22rem;
     right: 2rem;
     width: 45%;
   }
@@ -107,20 +138,44 @@
 
     &--1 {
       background-image: linear-gradient(to right bottom,
+        rgba($color-warning, .85),
         rgba($color-warning-light, .85),
         rgba($color-warning-dark, .85));
     }
 
     &--2 {
       background-image: linear-gradient(to right bottom,
+        rgba($color-success, .85),
         rgba($color-success-light, .85),
         rgba($color-success-dark, .85));
     }
 
     &--3 {
       background-image: linear-gradient(to right bottom,
+        rgba($color-primary, .85),
+        rgba($color-primary-light, .85),
+        rgba($color-primary-dark, .85));
+    }
+
+    &--4 {
+      background-image: linear-gradient(to right bottom,
+        rgba($color-secondary, .85),
         rgba($color-secondary-light, .85),
         rgba($color-secondary-dark, .85));
+    }
+
+    &--5 {
+      background-image: linear-gradient(to right bottom,
+        rgba($color-indigo, .85),
+        rgba($color-indigo-light, .85),
+        rgba($color-indigo-dark, .85));
+    }
+
+    &--6 {
+      background-image: linear-gradient(to right bottom,
+        rgba($color-pink, .85),
+        rgba($color-pink-light, .85),
+        rgba($color-pink-dark, .85));
     }
   }
   
