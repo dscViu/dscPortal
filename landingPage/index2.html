@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <!--
 Developed by the:
@@ -43,9 +45,9 @@ Developed by the:
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
-  <link rel="stylesheet" href="css/icon-font.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+  <link rel="stylesheet" href="{% static 'landingPage/css/icon-font.css' %} ">
+  <link rel="stylesheet" href="{% static 'landingPage/css/style.css' %} ">
+  <link rel="shortcut icon" type="image/png" href="{% static 'landingPage/img/favicon.png' %} ">
   <title>V.I.U Developer Student Club</title>
 </head>
 
@@ -53,7 +55,7 @@ Developed by the:
    <!-------------------------- Hero section  --------------------------------->
     <header class="header">
       <div class="header__logo-box">
-        <img class="header__logo" src="img/logo-white.png" alt="Logo">
+	      <img class="header__logo" src="{% static "img/logo-white.png" %}" alt="Logo">
       </div>
 
       <div class="header__text-box">
@@ -100,11 +102,11 @@ Developed by the:
           <div class="col-1-of-2">
             <div class="composition">
               <img class="composition__photo composition__photo--p1" 
-                  src="img/nat-1-large.jpg" alt="photo 1">
+		   src="{% static "img/nat-1-large.jpg" %}" alt="photo 1">
               <img class="composition__photo composition__photo--p2"
-                  src="img/nat-2-large.jpg" alt="photo 2">
+		   src="{% static "img/nat-2-large.jpg" %}" alt="photo 2">
               <img class="composition__photo composition__photo--p3"
-                  src="img/nat-3-large.jpg" alt="photo 3">
+		   src="{% static "img/nat-3-large.jpg" %}" alt="photo 3">
             </div>
           </div>
         </div>
@@ -399,7 +401,7 @@ Developed by the:
         <div class="bg-video">
           <!-- autoplay and loop are needed here -->
           <video class="bg-video__content" autoplay loop>
-            <source src="img/video.webm" type="video/webm">
+		  <source src="{% static "img/video.webm" %}" type="video/webm">
             Your Browser is not supported
           </video>
         </div>
@@ -414,7 +416,7 @@ Developed by the:
         <div class="row">
           <div class="updates">
             <figure class="updates__shape">
-              <img class="updates__img" src="img/python.jpg"
+		    <img class="updates__img" src="{% static "img/python.jpg" %}"
               alt="Django Updates">
               <figcaption class="updates__caption">
                 Django Update
@@ -438,7 +440,7 @@ Developed by the:
         <div class="row">
           <div class="updates">
             <figure class="updates__shape">
-              <img class="updates__img" src="img/django.jpg"
+		    <img class="updates__img" src="{% static "img/django.jpg" %}"
               alt="Django Updates">
               <figcaption class="updates__caption">
                 Django Update
@@ -459,15 +461,6 @@ Developed by the:
         </div>
         <div class="u-center-text u-margin-top-huge">
           <a class="btn-text" href="#">See all updates</a>
-        </div>
-      </section>
-      
-      <!--  Registration Form Section -->
-      <section class="section-register">
-        <div class="row">
-          <div class="register">
-            
-          </div>
         </div>
       </section>
     </main>

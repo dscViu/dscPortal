@@ -65,14 +65,15 @@ def index(request):
     # Call the Calendar API
     now = datetime.datetime.utcnow().isoformat() + 'Z' # 'Z' indicates UTC time
     events_result = service.events().list(calendarId='n40oh5qth67bge038cmj49gp7g@group.calendar.google.com', timeMin=now,
-                                        maxResults=3, singleEvents=True,
+                                        maxResults=2, singleEvents=True,
                                         orderBy='startTime').execute()
     events = events_result.get('items', [])
 
 
     #declaring empty array to hold events
     #cal = [] 
-    
+    event_title_list = []
+    event_date_list = []
     #tmfmt = '%d %B, %H:%M %p'             # Gives you date-time in the format '26 December, 10:00 AM'
 
 
@@ -89,9 +90,14 @@ def index(request):
 
         #create object instance for each loop 
 #        DSCEvent.objects.create(dscevent_title=str(event['summary']), dscevent_date = stime )
-        DSCEvent.objects.create(dscevent_title=str(event['summary']), dscevent_date = start )
+#        DSCEvent.objects.create(dscevent_title=str(event['summary']), dscevent_date = start )
 
 
+        event_title = event['summary']
+        event_date = start
+        
+        event_title_list.append(event_title)
+        event_date_list.append(event_date)
         #print(start, event['summary'])
 #        item = str(event['summary']) + '  :  ' + str(start)
 
@@ -111,7 +117,9 @@ def index(request):
     context = {
             #'cal': cal,
             #'events': events,
-            'dscevent_list': dscevent_list,
+            #'dscevent_list': dscevent_list,
+            'event_title_list':event_title_list,
+            'event_date_list':event_date_list,
             }
     return render(request, 'landingPage/index.html', context)
 

@@ -1,4 +1,3 @@
-
 {% load static %}
 
 <!DOCTYPE html>
@@ -102,8 +101,7 @@ Developed by the:
           <!--Image Composition -->
           <div class="col-1-of-2">
             <div class="composition">
-              <img class="composition__photo composition__photo--p1" 
-	      src="{% static "landingPage/img/nat-1-large.jpg" %}" alt="photo 1">
+              <img class="composition__photo composition__photo--p1" src="{% static "landingPage/img/nat-1-large.jpg" %}" alt="photo 1">
               <img class="composition__photo composition__photo--p2"
 		   src="{% static "landingPage/img/nat-2-large.jpg" %}" alt="photo 2">
               <img class="composition__photo composition__photo--p3"
@@ -287,48 +285,196 @@ Developed by the:
             </div>
           </div>
         </div>
+
+        <!-- Second Row of Contact Cards  -->
+        <div class="row">
+          <!-- Card 4 -->
+          <div class="col-1-of-3">
+            <div class="card">
+              <div class="card__side card__side--front">
+                <div class="card__picture card__picture--4">
+                <!-- this means empty space -->
+                  &nbsp;
+                </div>
+                <h4 class="card__heading">
+                  <span class="card__heading-span card__heading-span--4">
+                    Bohdan Natsevych
+                  </span>
+                </h4>
+                <div class="card__details">
+                  <ul>
+                    <li>DSC Lead</li>
+                    <li>What Should</li>
+                    <li>We write</li>
+                    <li>in this</li>
+                    <li>description</li>
+                  </ul>
+                </div>
+              <!-- Back of Card -->
+              </div>
+              <div class="card__side card__side--back card__side--back-4">
+                <div class="card--cta">
+                  <div class="card__icon-box">
+                    <p class="card__icon-text">Contact</p>
+                    <p class="card__icon-text-2">Icons will go here</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="col-1-of-3">
+            <div class="card">
+              <div class="card__side card__side--front">
+                <div class="card__picture card__picture--5">
+                <!-- this means empty space -->
+                  &nbsp;
+                </div>
+                <h4 class="card__heading">
+                  <span class="card__heading-span card__heading-span--5">
+                    Liam De Worde
+                  </span>
+                </h4>
+                <div class="card__details">
+                  <ul>
+                    <li>DSC Member</li>
+                    <li>What Should</li>
+                    <li>We write</li>
+                    <li>in this</li>
+                    <li>description</li>
+                  </ul>
+                </div>
+              </div>
+              <!-- Back of Card -->
+              <div class="card__side card__side--back card__side--back-5">
+                <div class="card--cta">
+                  <div class="card__icon-box">
+                    <p class="card__icon-text">Contact</p>
+                    <p class="card__icon-text-2">Icons will go here</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="col-1-of-3">
+            <div class="card">
+              <div class="card__side card__side--front">
+                <div class="card__picture card__picture--6">
+                <!-- this means empty space -->
+                  &nbsp;
+                </div>
+                <h4 class="card__heading">
+                  <span class="card__heading-span card__heading-span--6">
+                    Faith Hewitt
+                  </span>
+                </h4>
+                <div class="card__details">
+                  <ul>
+                    <li>DSC Member</li>
+                    <li>What Should</li>
+                    <li>We write</li>
+                    <li>in this</li>
+                    <li>description</li>
+                  </ul>
+                </div>
+              </div>
+              <!-- Back of Card -->
+              <div class="card__side card__side--back card__side--back-6">
+                <div class="card--cta">
+                  <div class="card__icon-box">
+                    <p class="card__icon-text">Contact</p>
+                    <p class="card__icon-text-2">Icons will go here</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- Club Updates Section -->
       <section class="section-updates">
+        <div class="bg-video">
+          <!-- autoplay and loop are needed here -->
+          <video class="bg-video__content" autoplay loop>
+		  <source src="{% static "landingPage/img/video.mp4" %}" type="video/mp4">
+		  <source src="{% static "landingPage/img/video.webm" %}" type="video/webm">
+            Your Browser is not supported
+          </video>
+        </div>
+
         <div class="u-center-text u-margin-bottom-big">
           <h2 class="heading-secondary">
             What we're up to
           </h2>
         </div>
-	
+        
+        <!-- First Update -->
 
-	<!-- TESTING calendar implementation django -->
-
-
-	{% for event in dscevent_list %}
+	<!-- ADDING calendar integration -->
 
         <div class="row">
           <div class="updates">
             <figure class="updates__shape">
-              
+		    <img class="updates__img" src="{% static "landingPage/img/python.jpg" %}"
+              alt="Django Updates">
+              <figcaption class="updates__caption">
+                Django Update
+              </figcaption>
+
             </figure>
             <div class="updates__text">
-              <h3 class="heading-tertiary margin-bottom-small">
-                
-		<!-- The Calender Updates from Django will go here --> 
-		{{ event.dscevent_title }}
+              <h3 class="heading-tertiary u-margin-bottom-small">
+		      <!-- The Calender Updates from Django will go here --> 
+			{{ event_title_list.0 }}
               </h3>
-              <p> 
 
-	      {{ event.dscevent_date }}
-
+              <p>
+	      		{{ event_date_list.0 }}
               </p>
             </div>
           </div>
-
         </div>
-	
-	{% endfor %}
-	<!-- END of test section for calendar implentation --> 
 
+
+
+        <!-- Second Update -->
+        <div class="row">
+          <div class="updates">
+            <figure class="updates__shape">
+		    <img class="updates__img" src="{% static "landingPage/img/django.jpg" %}"
+              alt="Django Updates">
+              <figcaption class="updates__caption">
+                Django Update
+              </figcaption>
+
+            </figure>
+            <div class="updates__text">
+              <h3 class="heading-tertiary u-margin-bottom-small">
+			{{ event_title_list.1 }}
+              </h3>
+              <p>
+	      		{{ event_date_list.1 }}
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="u-center-text u-margin-top-huge">
+          <a class="btn-text" href="#">See all updates</a>
+        </div>
       </section>
-
+      
+      <!--  Registration Form Section -->
+      <section class="section-register">
+        <div class="row">
+          <div class="register">
+            
+          </div>
+        </div>
+      </section>
     </main>
 
    <!-- 

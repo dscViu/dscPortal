@@ -271,9 +271,9 @@ body {
   perspective: 150rem;
   -moz-perspective: 150rem;
   position: relative;
-  height: 52rem; }
+  height: 58rem; }
   .card__side {
-    height: 52rem;
+    height: 58rem;
     transition: all 1.5s ease;
     position: absolute;
     top: 0;
@@ -293,14 +293,20 @@ body {
       .card__side--back-2 {
         background-image: linear-gradient(to right bottom, #b9f6ca, #69f0ae, #00e676); }
       .card__side--back-3 {
+        background-image: linear-gradient(to right bottom, #1976d2, #1565c0, #0d47a1); }
+      .card__side--back-4 {
         background-image: linear-gradient(to right bottom, #80d8ff, #40c4ff, #00b0ff); }
+      .card__side--back-5 {
+        background-image: linear-gradient(to right bottom, #8c9eff, #536dfe, #3d5afe); }
+      .card__side--back-6 {
+        background-image: linear-gradient(to right bottom, #ff80ab, #ff4081, #f50057); }
   .card:hover .card__side--front {
     transform: rotatey(-180deg); }
   .card:hover .card__side--back {
     transform: rotateY(0); }
   .card__picture {
     background-size: cover;
-    height: 23rem;
+    height: 30rem;
     background-blend-mode: soft-light;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); }
@@ -309,7 +315,13 @@ body {
     .card__picture--2 {
       background-image: linear-gradient(to right bottom, #b9f6ca, #69f0ae, #00e676), url(../img/phill.jpg); }
     .card__picture--3 {
-      background-image: linear-gradient(to right bottom, #80d8ff, #40c4ff, #00b0ff), url(../img/matt.png); }
+      background-image: linear-gradient(to right bottom, #1976d2, #1565c0, #0d47a1), url(../img/matt.png); }
+    .card__picture--4 {
+      background-image: linear-gradient(to right bottom, #80d8ff, #40c4ff, #00b0ff), url(../img/bohdan.png); }
+    .card__picture--5 {
+      background-image: linear-gradient(to right bottom, #8c9eff, #536dfe, #3d5afe), url(../img/liam.jpg); }
+    .card__picture--6 {
+      background-image: linear-gradient(to right bottom, #ff80ab, #ff4081, #f50057), url(../img/faith.jpg); }
   .card__heading {
     font-size: 2.5rem;
     font-weight: 300;
@@ -317,7 +329,7 @@ body {
     text-transform: uppercase;
     color: #fff;
     position: absolute;
-    top: 15rem;
+    top: 22rem;
     right: 2rem;
     width: 45%; }
   .card__heading-span {
@@ -325,11 +337,17 @@ body {
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone; }
     .card__heading-span--1 {
-      background-image: linear-gradient(to right bottom, rgba(255, 171, 64, 0.85), rgba(255, 145, 0, 0.85)); }
+      background-image: linear-gradient(to right bottom, rgba(255, 209, 128, 0.85), rgba(255, 171, 64, 0.85), rgba(255, 145, 0, 0.85)); }
     .card__heading-span--2 {
-      background-image: linear-gradient(to right bottom, rgba(105, 240, 174, 0.85), rgba(0, 230, 118, 0.85)); }
+      background-image: linear-gradient(to right bottom, rgba(185, 246, 202, 0.85), rgba(105, 240, 174, 0.85), rgba(0, 230, 118, 0.85)); }
     .card__heading-span--3 {
-      background-image: linear-gradient(to right bottom, rgba(64, 196, 255, 0.85), rgba(0, 176, 255, 0.85)); }
+      background-image: linear-gradient(to right bottom, rgba(25, 118, 210, 0.85), rgba(21, 101, 192, 0.85), rgba(13, 71, 161, 0.85)); }
+    .card__heading-span--4 {
+      background-image: linear-gradient(to right bottom, rgba(128, 216, 255, 0.85), rgba(64, 196, 255, 0.85), rgba(0, 176, 255, 0.85)); }
+    .card__heading-span--5 {
+      background-image: linear-gradient(to right bottom, rgba(140, 158, 255, 0.85), rgba(83, 109, 254, 0.85), rgba(61, 90, 254, 0.85)); }
+    .card__heading-span--6 {
+      background-image: linear-gradient(to right bottom, rgba(255, 128, 171, 0.85), rgba(255, 64, 129, 0.85), rgba(245, 0, 87, 0.85)); }
   .card__details {
     padding: 3rem; }
     .card__details ul {
@@ -363,15 +381,58 @@ body {
   width: 75%;
   margin: 0 auto;
   box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.7);
   border-radius: 3px;
   padding: 6rem;
-  font-size: 1.7rem; }
+  padding-left: 9rem;
+  font-size: 1.7rem;
+  transform: skewX(-12deg); }
   .updates__shape {
-    background-color: #80d8ff;
     width: 15rem;
     height: 15rem;
-    float: left; }
+    float: left;
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%);
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    transform: translateX(-3rem) skewX(12deg);
+    position: relative; }
+  .updates__img {
+    height: 100%;
+    transition: all .5s; }
+  .updates__text {
+    transform: skewX(12deg); }
+  .updates__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    text-align: center;
+    opacity: 0;
+    transition: all .5s; }
+  .updates:hover .updates__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%); }
+  .updates:hover .updates__img {
+    transfor: translateX(-4rem) scale(1);
+    filter: brightness(40%); }
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: .3;
+  overflow: hidden; }
+  .bg-video__content {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; }
 
 .row {
   /* 1140 px is standard for width
@@ -449,15 +510,24 @@ body {
   background-image: linear-gradient(to right bottom, rgba(25, 118, 210, 0.8), rgba(21, 101, 192, 0.8), rgba(13, 71, 161, 0.8)), url(../img/feature-section.jpg);
   background-size: cover;
   transform: skewY(-7deg);
-  margin-top: -11rem; }
+  margin-top: -10rem; }
   .section-features > * {
     transform: skewY(7deg); }
 
 .section-members {
   background-color: #f7f7f7;
   padding: 25rem 0 15rem 0;
-  margin-top: -11rem; }
+  margin-top: -10rem; }
 
 .section-updates {
+  position: relative;
+  padding: 10rem 0; }
+
+.section-register {
   padding: 15rem 0;
-  background-color: #f7f7f7; }
+  background-image: linear-gradient(to right bottom, #1976d2, #1565c0, #0d47a1); }
+
+.register {
+  background-image: url(../img/register-section.jpg);
+  background-size: 100%;
+  height: 50rem; }
