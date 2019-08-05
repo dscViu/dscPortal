@@ -296,7 +296,13 @@ Developed by the:
             What we're up to
           </h2>
         </div>
-        
+	
+
+	<!-- TESTING calendar implementation django -->
+
+
+	{% for event in dscevent_list %}
+
         <div class="row">
           <div class="updates">
             <figure class="updates__shape">
@@ -304,17 +310,22 @@ Developed by the:
             </figure>
             <div class="updates__text">
               <h3 class="heading-tertiary margin-bottom-small">
-                The Calender Updates from Django will go here
+                
+		<!-- The Calender Updates from Django will go here --> 
+		{{ event.dscevent_title }}
               </h3>
-              <p>
-                Lorem unde deserunt esse nostrum dolorum dolores.
-                Praesentium tenetur obcaecati tempora facilis facilis.
-                Dignissimos possimus at aliquid expedita temporibus Sint.
+              <p> 
+
+	      {{ event.dscevent_date }}
+
               </p>
             </div>
           </div>
 
         </div>
+	
+	{% endfor %}
+	<!-- END of test section for calendar implentation --> 
 
       </section>
 
