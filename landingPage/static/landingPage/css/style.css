@@ -57,8 +57,7 @@ body {
   font-weight: 400;
   line-height: 1.7;
   color: #777;
-  /* set padding to provide an external border */
-  padding: 3rem; }
+  /* set padding to provide an external border */ }
 
 .heading-primary {
   color: #fff;
@@ -92,7 +91,7 @@ body {
   text-transform: uppercase;
   font-weight: 700;
   display: inline-block;
-  background-image: linear-gradient(to right, #1976d2, #1565c0, #0d47a1);
+  background-image: linear-gradient(to right, #616161, #424242);
   -webkit-background-clip: text;
   color: transparent;
   letter-spacing: .2rem;
@@ -133,6 +132,20 @@ body {
 
 .u-margin-bottom-big {
   margin-bottom: 8rem; }
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: .3;
+  overflow: hidden; }
+  .bg-video__content {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; }
 
 /* Building the overly complex and convaluted
  * Animated Button using pseudo classes
@@ -197,15 +210,15 @@ body {
 .btn-text:link, .btn-text:visited {
   outline: none;
   font-size: 1.7rem;
-  color: #1976d2;
+  color: #64b5f6;
   display: inline-block;
   text-decoration: none;
-  border-bottom: 1px solid #1976d2;
+  border-bottom: 1px solid #64b5f6;
   padding: 5px;
   transition: all .2s; }
 
 .btn-text:hover {
-  background-color: #1976d2;
+  background-color: #64b5f6;
   color: #fff;
   box-shadow: 0 1 rem 2 rem rgba(0, 0, 0, 0.15);
   transform: translateY(-2px); }
@@ -213,59 +226,6 @@ body {
 .btn-text:active {
   box-shadow: 0 0.5 rem 2 rem rgba(0, 0, 0, 0.15);
   transform: translateY(0); }
-
-.composition {
-  /* setting the position of the 3 photos to absolute
-   * causes them to stack to the top left corner if its
-   * parent element, which in this case will cause
-   * them to stack to the .composition element, 
-   * so we need to set that element to relative
-   * */
-  position: relative; }
-  .composition__photo {
-    width: 55%;
-    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
-    border-radius: 2px;
-    position: absolute;
-    z-index: 10;
-    transition: all .2s;
-    outline-offset: 2rem; }
-    .composition__photo--p1 {
-      left: 0;
-      top: -2rem; }
-    .composition__photo--p2 {
-      right: 0;
-      top: 2rem; }
-    .composition__photo--p3 {
-      left: 20%;
-      top: 10rem; }
-    .composition__photo:hover {
-      outline: 1.5rem solid #1976d2;
-      transform: scale(1.05) translateY(-0.5rem);
-      box-shadow: -2.5rem 4rem rgba(0, 0, 0, 0.5);
-      z-index: 20; }
-  .composition:hover .composition__photo:not(:hover) {
-    transform: scale(0.95); }
-
-/* code for the featurebox from the feature box section*/
-.feature-box {
-  background-color: rgba(255, 255, 255, 0.8);
-  font-size: 1.5rem;
-  text-align: center;
-  border-radius: 3px;
-  padding: 3rem 2rem;
-  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
-  transition: transform .3s; }
-  .feature-box__icon {
-    font-size: 6rem;
-    margin-bottom: .5rem;
-    display: inline-block;
-    background-image: linear-gradient(to right, #1976d2, #1565c0, #0d47a1);
-    -webkit-background-clip: text;
-    color: transparent; }
-  .feature-box:hover {
-    transform: translateY(-1.03rem);
-    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.95); }
 
 .card {
   perspective: 150rem;
@@ -289,17 +249,17 @@ body {
       background-color: green;
       transform: rotatey(180deg); }
       .card__side--back-1 {
-        background-image: linear-gradient(to right bottom, #ffd180, #ffab40, #ff9100); }
+        background-image: linear-gradient(to right bottom, #ffb74d, #ffa726, #ff9800); }
       .card__side--back-2 {
-        background-image: linear-gradient(to right bottom, #b9f6ca, #69f0ae, #00e676); }
+        background-image: linear-gradient(to right bottom, #81c784, #66bb6a, #4caf50); }
       .card__side--back-3 {
-        background-image: linear-gradient(to right bottom, #1976d2, #1565c0, #0d47a1); }
+        background-image: linear-gradient(to right bottom, #64b5f6, #42a5f5, #2196f3); }
       .card__side--back-4 {
-        background-image: linear-gradient(to right bottom, #80d8ff, #40c4ff, #00b0ff); }
+        background-image: linear-gradient(to right bottom, #4dd0e1, #26c6da, #00bcd4); }
       .card__side--back-5 {
-        background-image: linear-gradient(to right bottom, #8c9eff, #536dfe, #3d5afe); }
+        background-image: linear-gradient(to right bottom, #7986cb, #5c6bc0, #3f51b5); }
       .card__side--back-6 {
-        background-image: linear-gradient(to right bottom, #ff80ab, #ff4081, #f50057); }
+        background-image: linear-gradient(to right bottom, #f8bbd0, #f48fb1, #f06292); }
   .card:hover .card__side--front {
     transform: rotatey(-180deg); }
   .card:hover .card__side--back {
@@ -307,21 +267,21 @@ body {
   .card__picture {
     background-size: cover;
     height: 30rem;
-    background-blend-mode: soft-light;
+    background-blend-mode: screen;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); }
     .card__picture--1 {
-      background-image: linear-gradient(to right bottom, #ffd180, #ffab40, #ff9100), url(../img/lenz.jpg); }
+      background-image: linear-gradient(to right bottom, #ffb74d, #ffa726, #ff9800), url(../img/lenz.jpg); }
     .card__picture--2 {
-      background-image: linear-gradient(to right bottom, #b9f6ca, #69f0ae, #00e676), url(../img/phill.jpg); }
+      background-image: linear-gradient(to right bottom, #81c784, #66bb6a, #4caf50), url(../img/phill.jpg); }
     .card__picture--3 {
-      background-image: linear-gradient(to right bottom, #1976d2, #1565c0, #0d47a1), url(../img/matt.png); }
+      background-image: linear-gradient(to right bottom, #64b5f6, #42a5f5, #2196f3), url(../img/matt.png); }
     .card__picture--4 {
-      background-image: linear-gradient(to right bottom, #80d8ff, #40c4ff, #00b0ff), url(../img/bohdan.png); }
+      background-image: linear-gradient(to right bottom, #4dd0e1, #26c6da, #00bcd4), url(../img/bohdan.png); }
     .card__picture--5 {
-      background-image: linear-gradient(to right bottom, #8c9eff, #536dfe, #3d5afe), url(../img/liam.jpg); }
+      background-image: linear-gradient(to right bottom, #7986cb, #5c6bc0, #3f51b5), url(../img/liam.jpg); }
     .card__picture--6 {
-      background-image: linear-gradient(to right bottom, #ff80ab, #ff4081, #f50057), url(../img/faith.jpg); }
+      background-image: linear-gradient(to right bottom, #f8bbd0, #f48fb1, #f06292), url(../img/faith.jpg); }
   .card__heading {
     font-size: 2.5rem;
     font-weight: 300;
@@ -337,17 +297,17 @@ body {
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone; }
     .card__heading-span--1 {
-      background-image: linear-gradient(to right bottom, rgba(255, 209, 128, 0.85), rgba(255, 171, 64, 0.85), rgba(255, 145, 0, 0.85)); }
+      background-image: linear-gradient(to right bottom, rgba(255, 183, 77, 0.85), rgba(255, 167, 38, 0.85), rgba(255, 152, 0, 0.85)); }
     .card__heading-span--2 {
-      background-image: linear-gradient(to right bottom, rgba(185, 246, 202, 0.85), rgba(105, 240, 174, 0.85), rgba(0, 230, 118, 0.85)); }
+      background-image: linear-gradient(to right bottom, rgba(129, 199, 132, 0.85), rgba(102, 187, 106, 0.85), rgba(76, 175, 80, 0.85)); }
     .card__heading-span--3 {
-      background-image: linear-gradient(to right bottom, rgba(25, 118, 210, 0.85), rgba(21, 101, 192, 0.85), rgba(13, 71, 161, 0.85)); }
+      background-image: linear-gradient(to right bottom, rgba(100, 181, 246, 0.85), rgba(66, 165, 245, 0.85), rgba(33, 150, 243, 0.85)); }
     .card__heading-span--4 {
-      background-image: linear-gradient(to right bottom, rgba(128, 216, 255, 0.85), rgba(64, 196, 255, 0.85), rgba(0, 176, 255, 0.85)); }
+      background-image: linear-gradient(to right bottom, rgba(77, 208, 225, 0.85), rgba(38, 198, 218, 0.85), rgba(0, 188, 212, 0.85)); }
     .card__heading-span--5 {
-      background-image: linear-gradient(to right bottom, rgba(140, 158, 255, 0.85), rgba(83, 109, 254, 0.85), rgba(61, 90, 254, 0.85)); }
+      background-image: linear-gradient(to right bottom, rgba(121, 134, 203, 0.85), rgba(92, 107, 192, 0.85), rgba(63, 81, 181, 0.85)); }
     .card__heading-span--6 {
-      background-image: linear-gradient(to right bottom, rgba(255, 128, 171, 0.85), rgba(255, 64, 129, 0.85), rgba(245, 0, 87, 0.85)); }
+      background-image: linear-gradient(to right bottom, rgba(248, 187, 208, 0.85), rgba(244, 143, 177, 0.85), rgba(240, 98, 146, 0.85)); }
   .card__details {
     padding: 3rem; }
     .card__details ul {
@@ -375,6 +335,96 @@ body {
   .card__icon-text-2 {
     font-size: 1.5rem;
     text-transform: uppercase; }
+
+.composition {
+  /* setting the position of the 3 photos to absolute
+   * causes them to stack to the top left corner if its
+   * parent element, which in this case will cause
+   * them to stack to the .composition element, 
+   * so we need to set that element to relative
+   * */
+  position: relative; }
+  .composition__photo {
+    width: 55%;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+    border-radius: 2px;
+    position: absolute;
+    z-index: 10;
+    transition: all .2s;
+    outline-offset: 2rem; }
+    .composition__photo--p1 {
+      left: 0;
+      top: -2rem; }
+    .composition__photo--p2 {
+      right: 0;
+      top: 2rem; }
+    .composition__photo--p3 {
+      left: 20%;
+      top: 10rem; }
+    .composition__photo:hover {
+      outline: 1.5rem solid #64b5f6;
+      transform: scale(1.05) translateY(-0.5rem);
+      box-shadow: -2.5rem 4rem rgba(0, 0, 0, 0.5);
+      z-index: 20; }
+  .composition:hover .composition__photo:not(:hover) {
+    transform: scale(0.95); }
+
+/* code for the featurebox from the feature box section*/
+.feature-box {
+  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 1.5rem;
+  text-align: center;
+  border-radius: 3px;
+  padding: 3rem 2rem;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  transition: transform .3s; }
+  .feature-box__icon {
+    font-size: 6rem;
+    margin-bottom: .5rem;
+    display: inline-block;
+    background-image: linear-gradient(to right, #64b5f6, #42a5f5, #2196f3);
+    -webkit-background-clip: text;
+    color: transparent; }
+  .feature-box:hover {
+    transform: translateY(-1.03rem);
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.95); }
+
+.form__group:not(:last-child) {
+  margin-bottom: 2rem; }
+
+.form__input {
+  font-size: 1.5rem;
+  font-family: inherit;
+  color: inherit;
+  padding: 1.5rem 2rem;
+  border-radius: 2px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-bottom: 3px sold transparent;
+  width: 90%;
+  display: block;
+  transition: all .3s; }
+  .form__input:focus {
+    outline: none;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+    border-bottom: 3px solid #81c784; }
+  .form__input:focus:invalid {
+    border-bottom: 3px solid #ff1744; }
+  .form__input::-webkit-input-placeholder {
+    color: #424242; }
+
+.form__label {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-left: 2rem;
+  margin-top: .7rem;
+  display: block;
+  transition: all .3s; }
+
+.form__input:placeholder-shown + .form__label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4rem); }
 
 /* Updates section */
 .updates {
@@ -420,20 +470,6 @@ body {
     transfor: translateX(-4rem) scale(1);
     filter: brightness(40%); }
 
-.bg-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  z-index: -1;
-  opacity: .3;
-  overflow: hidden; }
-  .bg-video__content {
-    height: 100%;
-    width: 100%;
-    object-fit: cover; }
-
 .row {
   /* 1140 px is standard for width
    * divide px by 10, that will give you rem */
@@ -474,7 +510,7 @@ body {
   /* 95% of the viewport height */
   height: 95vh;
   /* specify gradient color and image */
-  background-image: linear-gradient(to right bottom, rgba(25, 118, 210, 0.8), rgba(21, 101, 192, 0.8), rgba(13, 71, 161, 0.8)), url(../img/hero.jpg);
+  background-image: linear-gradient(to right bottom, rgba(100, 181, 246, 0.8), rgba(66, 165, 245, 0.8), rgba(33, 150, 243, 0.8)), url(../img/hero.jpg);
   background-size: cover;
   /* set position top so the top of the image 
    * sticks in one place
@@ -506,8 +542,8 @@ body {
   margin-top: -20vh; }
 
 .section-features {
-  padding: 20rem 0;
-  background-image: linear-gradient(to right bottom, rgba(25, 118, 210, 0.8), rgba(21, 101, 192, 0.8), rgba(13, 71, 161, 0.8)), url(../img/feature-section.jpg);
+  padding: 30rem 0;
+  background-image: linear-gradient(to right bottom, rgba(100, 181, 246, 0.8), rgba(66, 165, 245, 0.8), rgba(33, 150, 243, 0.8)), url(../img/feature-section.jpg);
   background-size: cover;
   transform: skewY(-7deg);
   margin-top: -10rem; }
@@ -525,9 +561,15 @@ body {
 
 .section-register {
   padding: 15rem 0;
-  background-image: linear-gradient(to right bottom, #1976d2, #1565c0, #0d47a1); }
+  background-image: linear-gradient(to right bottom, #64b5f6, #42a5f5, #2196f3); }
 
 .register {
-  background-image: url(../img/register-section.jpg);
+  background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.85) 50%, transparent 50%), url(../img/register-section.jpg);
   background-size: 100%;
-  height: 50rem; }
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
+  height: 70rem;
+  width: 100%; }
+  .register__form {
+    width: 50%;
+    padding: 6rem; }
