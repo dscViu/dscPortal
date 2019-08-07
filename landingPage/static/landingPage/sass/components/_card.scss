@@ -48,7 +48,7 @@
 
       &-4 {
         background-image: linear-gradient(to right bottom,
-        $color-secondary, $color-secondary-light, $color-secondary-dark);
+        $color-cyan, $color-cyan-light, $color-cyan-dark);
       }
 
       &-5 {
@@ -72,12 +72,11 @@
     transform: rotateY(0);
   }
 
-  
   // Card Front Styling
   &__picture {
     background-size: cover;
     height: 30rem;
-    background-blend-mode: soft-light;
+    background-blend-mode: screen;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 
@@ -85,12 +84,14 @@
       background-image: linear-gradient(to right bottom,
       $color-warning, $color-warning-light, $color-warning-dark),
       url(../img/lenz.jpg);
+      //background-image: url("../img/lenz.jpg");
     }
 
     &--2 {
       background-image: linear-gradient(to right bottom,
       $color-success, $color-success-light, $color-success-dark),
       url(../img/phill.jpg);
+      //background-image: url(../img/phill.jpg);
 
     }
 
@@ -98,24 +99,28 @@
       background-image: linear-gradient(to right bottom,
       $color-primary, $color-primary-light, $color-primary-dark),
       url(../img/matt.png);
+      //background-image: url(../img/matt.png);
     }
 
     &--4 {
       background-image: linear-gradient(to right bottom,
-      $color-secondary, $color-secondary-light, $color-secondary-dark),
+      $color-cyan, $color-cyan-light, $color-cyan-dark),
       url(../img/bohdan.png);
+      //background-image: url(../img/bohdan.png);
     }
 
     &--5 {
       background-image: linear-gradient(to right bottom,
       $color-indigo, $color-indigo-light, $color-indigo-dark),
       url(../img/liam.jpg);
+      //background-image: url(../img/liam.jpg);
     }
 
     &--6 {
       background-image: linear-gradient(to right bottom,
       $color-pink, $color-pink-light, $color-pink-dark),
       url(../img/faith.jpg);
+      //background-image: url(../img/faith.jpg);
     }
   }
 
@@ -159,9 +164,9 @@
 
     &--4 {
       background-image: linear-gradient(to right bottom,
-        rgba($color-secondary, .85),
-        rgba($color-secondary-light, .85),
-        rgba($color-secondary-dark, .85));
+        rgba($color-cyan, .85),
+        rgba($color-cyan-light, .85),
+        rgba($color-cyan-dark, .85));
     }
 
     &--5 {

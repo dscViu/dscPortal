@@ -3,9 +3,9 @@
 <!DOCTYPE html>
 <!--
 Developed by the:
-
- **      ** ** **     **
-/**     /**/**/**    /** /**     /**/**/**    /**
+/**     /**/**/**    /**
+/**      ** ** **     **
+/**     /**/**/**    /** 
 //**    ** /**/**    /**
  //**  **  /**/**    /**
   //****   /**/**    /**
@@ -21,14 +21,14 @@ Developed by the:
  //****** //******  *** /** /**/**     //******  //** //******/***      
   //////   //////  ///  //  // //       //////    //   ////// ///       
 
-   ********         **                                 
-  **//////         //                                  
- /**         *****  **  *****  *******   *****   *****  
- /********* **///**/** **///**//**///** **///** **///** 
- ////////**/**  // /**/******* /**  /**/**  // /******* 
-        /**/**   **/**/**////  /**  /**/**   **/**////  
-  ******** //***** /**//****** ***  /**//***** //****** 
- ////////   /////  //  ////// ///   //  /////   //////  
+  ********         **                                 
+ **//////         //                                  
+/**         *****  **  *****  *******   *****   *****  
+/********* **///**/** **///**//**///** **///** **///** 
+////////**/**  // /**/******* /**  /**/**  // /******* 
+       /**/**   **/**/**////  /**  /**/**   **/**////  
+ ******** //***** /**//****** ***  /**//***** //****** 
+////////   /////  //  ////// ///   //  /////   //////  
 
    ******   **         **     
   **////** /**        /**     
@@ -45,9 +45,9 @@ Developed by the:
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
-  <link rel="stylesheet" href="{% static 'landingPage/css/icon-font.css' %} ">
-  <link rel="stylesheet" href="{% static 'landingPage/css/style.css' %} ">
-  <link rel="shortcut icon" type="image/png" href="{% static 'landingPage/img/favicon.png' %} ">
+  <link rel="stylesheet" href="{% static 'landingPage/css/icon-font.css' %}">
+  <link rel="stylesheet" href="{% static 'landingPage/css/style.css' %}">
+  <link rel="shortcut icon" type="image/png" href="{% static 'landingPage/img/favicon.png' %}">
   <title>V.I.U Developer Student Club</title>
 </head>
 
@@ -55,7 +55,7 @@ Developed by the:
    <!-------------------------- Hero section  --------------------------------->
     <header class="header">
       <div class="header__logo-box">
-	      <img class="header__logo" src="{% static "landingPage/img/logo-white.png" %}" alt="Logo">
+	      <img class="header__logo" src="{% static 'landingPage/img/logo-white.png' %}" alt="Logo">
       </div>
 
       <div class="header__text-box">
@@ -101,11 +101,9 @@ Developed by the:
           <!--Image Composition -->
           <div class="col-1-of-2">
             <div class="composition">
-              <img class="composition__photo composition__photo--p1" src="{% static "landingPage/img/nat-1-large.jpg" %}" alt="photo 1">
-              <img class="composition__photo composition__photo--p2"
-		   src="{% static "landingPage/img/nat-2-large.jpg" %}" alt="photo 2">
-              <img class="composition__photo composition__photo--p3"
-		   src="{% static "landingPage/img/nat-3-large.jpg" %}" alt="photo 3">
+		    <img class="composition__photo composition__photo--p1" src="{% static 'landingPage/img/nat-1-large.jpg' %}" alt="photo 1">
+		    <img class="composition__photo composition__photo--p2" src="{% static 'landingPage/img/nat-2-large.jpg' %}" alt="photo 2">
+		    <img class="composition__photo composition__photo--p3" src="{% static 'landingPage/img/nat-3-large.jpg' %}" alt="photo 3">
             </div>
           </div>
         </div>
@@ -303,7 +301,7 @@ Developed by the:
                 </h4>
                 <div class="card__details">
                   <ul>
-                    <li>DSC Lead</li>
+                    <li>DSC Member</li>
                     <li>What Should</li>
                     <li>We write</li>
                     <li>in this</li>
@@ -400,8 +398,7 @@ Developed by the:
         <div class="bg-video">
           <!-- autoplay and loop are needed here -->
           <video class="bg-video__content" autoplay loop>
-		  <source src="{% static "landingPage/img/video.mp4" %}" type="video/mp4">
-		  <source src="{% static "landingPage/img/video.webm" %}" type="video/webm">
+		  <source src="{% static 'landingPage/img/video.webm' %}" type="video/webm">
             Your Browser is not supported
           </video>
         </div>
@@ -413,13 +410,10 @@ Developed by the:
         </div>
         
         <!-- First Update -->
-
-	<!-- ADDING calendar integration -->
-
         <div class="row">
           <div class="updates">
             <figure class="updates__shape">
-		    <img class="updates__img" src="{% static "landingPage/img/python.jpg" %}"
+		    <img class="updates__img" src="{% static 'landingPage/img/python.jpg' %}"
               alt="Django Updates">
               <figcaption class="updates__caption">
                 Django Update
@@ -431,21 +425,18 @@ Developed by the:
 		      <!-- The Calender Updates from Django will go here --> 
 			{{ event_title_list.0 }}
               </h3>
-
-              <p>
+              <p class="paragraph">
 	      		{{ event_date_list.0 }}
               </p>
             </div>
           </div>
         </div>
 
-
-
         <!-- Second Update -->
         <div class="row">
           <div class="updates">
             <figure class="updates__shape">
-		    <img class="updates__img" src="{% static "landingPage/img/django.jpg" %}"
+		    <img class="updates__img" src="{% static 'landingPage/img/django.jpg' %}"
               alt="Django Updates">
               <figcaption class="updates__caption">
                 Django Update
@@ -454,9 +445,10 @@ Developed by the:
             </figure>
             <div class="updates__text">
               <h3 class="heading-tertiary u-margin-bottom-small">
+		      <!-- The Calender Updates from Django will go here -->
 			{{ event_title_list.1 }}
               </h3>
-              <p>
+              <p class="paragraph">
 	      		{{ event_date_list.1 }}
               </p>
             </div>
@@ -471,7 +463,33 @@ Developed by the:
       <section class="section-register">
         <div class="row">
           <div class="register">
-            
+            <div class="register__form">
+              <form action="#" class="form">
+                <div class="u-margin-bottom-medium">
+                  <h2 class="heading-secondary">
+                    Interested in joining? 
+                  </h2>
+                </div>
+                <!-- Name -->
+                <div class="form__group">
+                  <input class="form__input" id="name" 
+                    type="text" placeholder="Full Name" required>
+                  <label class="form__label" for="name">Full Name</label>
+                </div>
+                <!-- major -->
+                <div class="form__group">
+                  <input class="form__input" id="major" 
+                    type="text" placeholder="major" required>
+                  <label class="form__label" for="major">Major</label>
+                </div>
+                <!-- email -->
+                <div class="form__group">
+                  <input class="form__input" id="email" 
+                    type="email" placeholder="Email address" required>
+                  <label class="form__label" for="name">Email</label>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </section>

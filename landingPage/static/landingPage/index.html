@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <!--
 Developed by the:
-
- **      ** ** **     **
-/**     /**/**/**    /** /**     /**/**/**    /**
+/**     /**/**/**    /**
+/**      ** ** **     **
+/**     /**/**/**    /** 
 //**    ** /**/**    /**
  //**  **  /**/**    /**
   //****   /**/**    /**
@@ -19,14 +19,14 @@ Developed by the:
  //****** //******  *** /** /**/**     //******  //** //******/***      
   //////   //////  ///  //  // //       //////    //   ////// ///       
 
-   ********         **                                 
-  **//////         //                                  
- /**         *****  **  *****  *******   *****   *****  
- /********* **///**/** **///**//**///** **///** **///** 
- ////////**/**  // /**/******* /**  /**/**  // /******* 
-        /**/**   **/**/**////  /**  /**/**   **/**////  
-  ******** //***** /**//****** ***  /**//***** //****** 
- ////////   /////  //  ////// ///   //  /////   //////  
+  ********         **                                 
+ **//////         //                                  
+/**         *****  **  *****  *******   *****   *****  
+/********* **///**/** **///**//**///** **///** **///** 
+////////**/**  // /**/******* /**  /**/**  // /******* 
+       /**/**   **/**/**////  /**  /**/**   **/**////  
+ ******** //***** /**//****** ***  /**//***** //****** 
+////////   /////  //  ////// ///   //  /////   //////  
 
    ******   **         **     
   **////** /**        /**     
@@ -99,12 +99,9 @@ Developed by the:
           <!--Image Composition -->
           <div class="col-1-of-2">
             <div class="composition">
-              <img class="composition__photo composition__photo--p1" 
-                  src="img/nat-1-large.jpg" alt="photo 1">
-              <img class="composition__photo composition__photo--p2"
-                  src="img/nat-2-large.jpg" alt="photo 2">
-              <img class="composition__photo composition__photo--p3"
-                  src="img/nat-3-large.jpg" alt="photo 3">
+              <img class="composition__photo composition__photo--p1" src="img/nat-1-large.jpg" alt="photo 1">
+              <img class="composition__photo composition__photo--p2" src="img/nat-2-large.jpg" alt="photo 2">
+              <img class="composition__photo composition__photo--p3" src="img/nat-3-large.jpg" alt="photo 3">
             </div>
           </div>
         </div>
@@ -302,7 +299,7 @@ Developed by the:
                 </h4>
                 <div class="card__details">
                   <ul>
-                    <li>DSC Lead</li>
+                    <li>DSC Member</li>
                     <li>What Should</li>
                     <li>We write</li>
                     <li>in this</li>
@@ -425,7 +422,7 @@ Developed by the:
               <h3 class="heading-tertiary u-margin-bottom-small">
                 The Calender Updates from Django will go here
               </h3>
-              <p>
+              <p class="paragraph">
                 Lorem unde deserunt esse nostrum dolorum dolores.
                 Praesentium tenetur obcaecati tempora facilis facilis.
                 Dignissimos possimus at aliquid expedita temporibus Sint.
@@ -449,7 +446,7 @@ Developed by the:
               <h3 class="heading-tertiary u-margin-bottom-small">
                 The Calender Updates from Django will go here
               </h3>
-              <p>
+              <p class="paragraph">
                 Lorem unde deserunt esse nostrum dolorum dolores.
                 Praesentium tenetur obcaecati tempora facilis facilis.
                 Dignissimos possimus at aliquid expedita temporibus Sint.
@@ -466,7 +463,33 @@ Developed by the:
       <section class="section-register">
         <div class="row">
           <div class="register">
-            
+            <div class="register__form">
+              <form action="#" class="form">
+                <div class="u-margin-bottom-medium">
+                  <h2 class="heading-secondary">
+                    Interested in joining? 
+                  </h2>
+                </div>
+                <!-- Name -->
+                <div class="form__group">
+                  <input class="form__input" id="name" 
+                    type="text" placeholder="Full Name" required>
+                  <label class="form__label" for="name">Full Name</label>
+                </div>
+                <!-- major -->
+                <div class="form__group">
+                  <input class="form__input" id="major" 
+                    type="text" placeholder="major" required>
+                  <label class="form__label" for="major">Major</label>
+                </div>
+                <!-- email -->
+                <div class="form__group">
+                  <input class="form__input" id="email" 
+                    type="email" placeholder="Email address" required>
+                  <label class="form__label" for="name">Email</label>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </section>
