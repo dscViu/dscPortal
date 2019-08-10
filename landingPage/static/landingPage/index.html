@@ -37,6 +37,7 @@ Developed by the:
  //******  ***//******/****** 
   //////  ///  ////// /////   
 
+Markup uses the BEM notation
 -->
 <html lang="en">
 <head>
@@ -50,6 +51,38 @@ Developed by the:
 </head>
 
   <body>
+   <!-------------------------- 
+     Navigation section 
+     Your probably wondering where all the javascript
+     babble is at, there is none, for
+     God is not the author of such confusion.
+     This is the infamous check box hack, using
+     pure CSS
+     --------------------------------->
+    <div class="navigation">
+      <input class="navigation__checkbox" type="checkbox" id="navi-toggle">
+      <label class="navigation__button" for="navi-toggle">
+        <!-- Build the hamburger menu from spans -->
+        <span class="navigation__icon">&nbsp;</span>
+
+      </label>
+      <div class="navigation__background">&nbsp;</div>
+
+      <nav class="navigation__nav">
+        <ul class="navigation__list">
+          <li class="navigation__item"><a class="navigation__link" href="#">
+              <span>01</span> Login</a></li>
+          <li class="navigation__item"><a class="navigation__link" href="#">
+              <span>02</span> Blog</a></li>
+          <li class="navigation__item"><a class="navigation__link" href="#">
+              <span>03</span> Projects</a></li>
+          <li class="navigation__item"><a class="navigation__link" href="#">
+              <span>04</span> Register</a></li>
+        </ul>
+      </nav>
+    </div>
+
+
    <!-------------------------- Hero section  --------------------------------->
     <header class="header">
       <div class="header__logo-box">
@@ -70,7 +103,7 @@ Developed by the:
       <section class="section-about">
        <!-- u-center-text is a utitlity class -->
         <div class="u-center-text u-margin-bottom-big">
-          <h2 class="heading-secondary">
+          <h2 class="heading-secondary" id="about">
            Goals of the Club
           </h2>
         </div>
@@ -467,26 +500,65 @@ Developed by the:
               <form action="#" class="form">
                 <div class="u-margin-bottom-medium">
                   <h2 class="heading-secondary">
-                    Interested in joining? 
+                    Want to join?
                   </h2>
                 </div>
                 <!-- Name -->
                 <div class="form__group">
                   <input class="form__input" id="name" 
-                    type="text" placeholder="Full Name" required>
+                    type="text" placeholder="Full Name.." required>
                   <label class="form__label" for="name">Full Name</label>
                 </div>
                 <!-- major -->
                 <div class="form__group">
                   <input class="form__input" id="major" 
-                    type="text" placeholder="major" required>
+                    type="text" placeholder="Major.." required>
                   <label class="form__label" for="major">Major</label>
                 </div>
                 <!-- email -->
                 <div class="form__group">
                   <input class="form__input" id="email" 
-                    type="email" placeholder="Email address" required>
+                    type="email" placeholder="Email address.." required>
                   <label class="form__label" for="name">Email</label>
+                </div>
+
+                <!-- Radio Buttons -->
+                <div class="form__group">
+                  <div class="form__radio-group">
+                    <input class="form__radio-input" type="radio" id="year1" name="year">
+                    <label class="form__radio-label" for="year1">
+                      <span class="form__radio-button"></span>
+                      1st year
+                    </label>
+                  </div>
+
+                  <div class="form__radio-group">
+                    <input class="form__radio-input" type="radio" id="year2" name="year">
+                    <label class="form__radio-label" for="year2">
+                      <span class="form__radio-button"></span>
+                      2nd year
+                    </label>
+                  </div>
+
+                  <div class="form__radio-group">
+                    <input class="form__radio-input" type="radio" id="year3" name="year">
+                    <label class="form__radio-label" for="year3">
+                      <span class="form__radio-button"></span>
+                      3rd year
+                    </label>
+                  </div>
+
+                  <div class="form__radio-group">
+                    <input class="form__radio-input" type="radio" id="year4" name="year">
+                    <label class="form__radio-label" for="year4">
+                      <span class="form__radio-button"></span>
+                      4th year
+                    </label>
+                  </div>
+                </div>
+                
+                <div class="form__group u-margin-top-small">
+                  <button class=" btn btn--primary" href="#">Register</button>
                 </div>
               </form>
             </div>
@@ -494,6 +566,42 @@ Developed by the:
         </div>
       </section>
     </main>
+
+    <!----------------------- Footer ---------------------------------->
+    <footer class="footer">
+      <div class="footer__logo-box">
+        <!--TODO: DJANGO -->
+        <img src="img/logo-white.png" alt="Logo">
+      </div>
+      <div class="row">
+        <div class="col-1-of-2">
+          <div class="footer__navigation">
+            <ul class="footer__list">
+              <li class="li footer__item"><a class="footer__link" href="#">V.I.U CS</a></li>
+              <li class="li footer__item"><a class="footer__link" href="#">Contact us</a></li>
+              <li class="li footer__item"><a class="footer__link" href="#">Our GitLab</a></li>
+              <li class="li footer__item"><a class="footer__link" href="#">Django Docs</a></li>
+              <li class="li footer__item"><a class="footer__link" href="#">FSF</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-1-of-2">
+          <p class="footer__copyright">
+            Developed by the <a class="footer__link" href="#">VIU DSC</a>.
+            Powered by <a class="footer__link" href="#">Python and Django</a>.
+            Copyright &copy; by the V.I.U Developer Student Club.
+            This is an open-source project, we encourage anyone to clone, hack-on, change or modify the
+            code and contribute. <a class="footer__link" href="#">use the source luke</a>.
+            Credit for photos goes to the talented
+            photographers over at <a class="footer__link" href="#">unsplash</a>.
+            The colorscheme is a carefully chosen pallete of gradients from
+            <a class="footer__link" href="#">Material Design</a>.
+          </p>
+        </div>
+      </div>
+    </footer>
+    <!----------------------- End Footer ---------------------------------->
+
 
    <!-- 
     =============================================================
