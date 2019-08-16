@@ -65,41 +65,61 @@ def index(request):
     # Call the Calendar API
     now = datetime.datetime.utcnow().isoformat() + 'Z' # 'Z' indicates UTC time
     events_result = service.events().list(calendarId='n40oh5qth67bge038cmj49gp7g@group.calendar.google.com', timeMin=now,
-                                        maxResults=10, singleEvents=True,
+                                        maxResults=2, singleEvents=True,
                                         orderBy='startTime').execute()
     events = events_result.get('items', [])
 
-    cal = [] 
-    tmfmt = '%d %B, %H:%M %p'             # Gives you date-time in the format '26 December, 10:00 AM'
+
+    #declaring empty array to hold events
+    #cal = [] 
+    event_title_list = []
+    event_date_list = []
+    #tmfmt = '%d %B, %H:%M %p'             # Gives you date-time in the format '26 December, 10:00 AM'
+
+
 
     #if not events:
     #    print('No upcoming events found.')
     for event in events:
+
+
+        #get event time 
         start = event['start'].get('dateTime', event['start'].get('date'))
-
         # using dtparse to read event start time and dt.strftime to format time
-        stime = dt.strftime(dtparse(start), format=tmfmt)
+     #   stime = dt.strftime(dtparse(start), format=tmfmt)
+
+        #create object instance for each loop 
+#        DSCEvent.objects.create(dscevent_title=str(event['summary']), dscevent_date = stime )
+#        DSCEvent.objects.create(dscevent_title=str(event['summary']), dscevent_date = start )
 
 
-
-
+        event_title = event['summary']
+        event_date = start
+        
+        event_title_list.append(event_title)
+        event_date_list.append(event_date)
         #print(start, event['summary'])
 #        item = str(event['summary']) + '  :  ' + str(start)
-        item = str(event['summary']) + '  :  ' + str(stime)
-        cal.append(item)
-        #cal.append(start, event['summary'])
+
+        #item = str(event['summary']) + '  :  ' + str(stime)
+        #cal.append(item)
+       
+
+       #cal.append(start, event['summary'])
         #cal.append(start)
         #cal.append(event['summary'])
         #cal.append('\n')
 
 
 #def index(request):
-#    dscevent_list = DSCEvent.objects.order_by('-dscevent_date')
+    dscevent_list = DSCEvent.objects.order_by('-dscevent_date')
     template = loader.get_template('landingPage/index.html')
     context = {
-            'cal': cal,
+            #'cal': cal,
             #'events': events,
             #'dscevent_list': dscevent_list,
+            'event_title_list':event_title_list,
+            'event_date_list':event_date_list,
             }
     return render(request, 'landingPage/index.html', context)
 

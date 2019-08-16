@@ -497,7 +497,10 @@ Markup uses the BEM notation
         <div class="row">
           <div class="register">
             <div class="register__form">
-              <form action="#" class="form">
+              <form class="form" method="post">
+
+	        {% csrf_token %}
+
                 <div class="u-margin-bottom-medium">
                   <h2 class="heading-secondary">
                     Want to join?
@@ -506,19 +509,19 @@ Markup uses the BEM notation
                 <!-- Name -->
                 <div class="form__group">
                   <input class="form__input" id="name" 
-                    type="text" placeholder="Full Name.." required>
+                    type="text" placeholder="Full Name.." name="studentName" required>
                   <label class="form__label" for="name">Full Name</label>
                 </div>
                 <!-- major -->
                 <div class="form__group">
                   <input class="form__input" id="major" 
-                    type="text" placeholder="Major.." required>
+                    type="text" placeholder="Major.." name="major" required>
                   <label class="form__label" for="major">Major</label>
                 </div>
                 <!-- email -->
                 <div class="form__group">
                   <input class="form__input" id="email" 
-                    type="email" placeholder="Email address.." required>
+                    type="email" placeholder="Email address.." name="email" required>
                   <label class="form__label" for="name">Email</label>
                 </div>
 
@@ -558,7 +561,7 @@ Markup uses the BEM notation
                 </div>
                 
                 <div class="form__group u-margin-top-small">
-                  <button class=" btn btn--primary" href="#">Register</button>
+                  <button class=" btn btn--primary">Register</button>
                 </div>
               </form>
             </div>
