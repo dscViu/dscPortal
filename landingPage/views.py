@@ -141,12 +141,15 @@ def index(request):
     if request.method == 'POST':
         # create a form instance and populate it with data from the request:
         
-        #form = StudentInfo(request.POST)
-        
+        #get post request data 
         print(request.POST)
-        print(request.POST.get('id',))
+        #print(request.POST.get('studentName'))
         
-        
+        #get student name from post
+        sName = request.POST.get('studentName')
+        print(sName)
+
+
         context = {
                 'event_title_list':event_title_list,
                 'event_date_list':event_date_list,
@@ -158,7 +161,9 @@ def index(request):
             # process the data in form.cleaned_data as required
             # ... #FIXME: append to proper google sheet using google api
             # redirect to a new URL:
-        return HttpResponseRedirect('/thanks/') #TODO: Redirect to same page??? Or create thanks page
+        
+        return render(request, 'landingPage/index.html', context)
+        #return HttpResponseRedirect('/thanks/') #TODO: Redirect to same page??? Or create thanks page
 
     # if a GET (or any other method) we'll create a blank form
     else:
