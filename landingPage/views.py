@@ -12,25 +12,46 @@ from google.auth.transport.requests import Request
 from dateutil.parser import parse as dtparse
 from datetime import datetime as dt
 
-#######################
-#Regular django imports 
+##############################################
+#Regular django specific imports 
 from django.shortcuts import render
 
-from django.http import HttpResponse
+from django.http import HttpResponseRedirect #for forms submitted.. 
+from .forms import StudentInfo
+
+from django.http import HttpResponse #TODO: Confirm if still needed with the above ...Redirect
 from django.template import loader
 from .models import DSCEvent
 
 
 
-
 # Create your views here.
+
+'''
+def getStudentInfo(request):
+    # if this is a POST request we need to process the form data
+    if request.method == 'POST':
+        # create a form instance and populate it with data from the request:
+        form = getStudentInfo(request.POST)
+        # check whether it's valid:
+        if form.is_valid():
+            # process the data in form.cleaned_data as required
+            # ...
+            # redirect to a new URL:
+            return HttpResponseRedirect('/thanks/') #TODO: Redirect to same page??? Or create thanks page
+
+    # if a GET (or any other method) we'll create a blank form
+    else:
+        form = getStudentInfo()
+
+#    return render(request, 'name.html', {'form': form}) #FIXME
+'''    
+
 
 ''' #GCAL API '''
 ### CREATING CALENDAR INSTANCE ###
-
 # If modifying these scopes, delete the file token.pickle.
 #SCOPES = ['https://www.googleapis.com/auth/calendar.readonly']
-
 def index(request):
     SCOPES = ['https://www.googleapis.com/auth/calendar.readonly']
     
@@ -59,10 +80,7 @@ def index(request):
     service = build('calendar', 'v3', credentials=creds)
 
 
-
-
-
-    # Call the Calendar API
+    # Calling the Calendar API
     now = datetime.datetime.utcnow().isoformat() + 'Z' # 'Z' indicates UTC time
     events_result = service.events().list(calendarId='n40oh5qth67bge038cmj49gp7g@group.calendar.google.com', timeMin=now,
                                         maxResults=2, singleEvents=True,
@@ -111,16 +129,48 @@ def index(request):
         #cal.append('\n')
 
 
-#def index(request):
     dscevent_list = DSCEvent.objects.order_by('-dscevent_date')
     template = loader.get_template('landingPage/index.html')
-    context = {
-            #'cal': cal,
-            #'events': events,
-            #'dscevent_list': dscevent_list,
-            'event_title_list':event_title_list,
-            'event_date_list':event_date_list,
-            }
+
+
+    '''
+    conditional return of index function, 
+    depending on whether form has been filled properly and submitted, or not 
+    '''
+    # if this is a POST request we need to process the form data
+    if request.method == 'POST':
+        # create a form instance and populate it with data from the request:
+        
+        #form = StudentInfo(request.POST)
+        
+        print(request.POST)
+        print(request.POST.get('id',))
+        
+        
+        context = {
+                'event_title_list':event_title_list,
+                'event_date_list':event_date_list,
+                #'form':form,
+                }
+    
+        # check whether it's valid:
+        #if form.is_valid():
+            # process the data in form.cleaned_data as required
+            # ... #FIXME: append to proper google sheet using google api
+            # redirect to a new URL:
+        return HttpResponseRedirect('/thanks/') #TODO: Redirect to same page??? Or create thanks page
+
+    # if a GET (or any other method) we'll create a blank form
+    else:
+        #form = StudentInfo()
+
+        
+        context = {
+                'event_title_list':event_title_list,
+                'event_date_list':event_date_list,
+                #'form':form,
+                }
+    
     return render(request, 'landingPage/index.html', context)
 
 
