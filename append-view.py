@@ -14,9 +14,7 @@ SCOPES = ['https://www.googleapis.com/auth/spreadsheets'] #read/write
 #SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly'] #readonly
 
 # The ID and range of a sample spreadsheet.
-SAMPLE_SPREADSHEET_ID = '1XmMCdfkYlmpSK-g64aLQcAaa5JXTnxQDpcJxD22BbyM' #test sheet 
-
-SAMPLE_RANGE_NAME = 'emails!A2:B25'
+emailList = '1XmMCdfkYlmpSK-g64aLQcAaa5JXTnxQDpcJxD22BbyM' #test sheet 
 
 def main():
     """Shows basic usage of the Sheets API.
@@ -44,18 +42,30 @@ def main():
     service = build('sheets', 'v4', credentials=creds)
 
     # Call the Sheets API
-    sheet = service.spreadsheets()
-    result = sheet.values().get(spreadsheetId=SAMPLE_SPREADSHEET_ID,
-                                range=SAMPLE_RANGE_NAME).execute()
-    values = result.get('values', [])
 
-    if not values:
-        print('No data found.')
-    else:
-        print('email, name:')
-        for row in values:
-            # Print columns A and E, which correspond to indices 0 and 4.
-            print('%s, %s' % (row[0], row[1]))
+    range_name = 'emails' #name of the sheet. Appending at bottom of sheet
+    valueInputOption = "RAW" #input user data as is #TODO safe?
+    email = "a@a.ca" 
+    name = "Justin Example" 
+
+    values = [
+        [
+            email, name
+        ],
+        # Additional rows ...
+    ]
+    body = {
+        'values': values   #dictionary of values
+    }
+    result = service.spreadsheets().values().append(
+        spreadsheetId=emailList, range=range_name,
+        valueInputOption='RAW', body=body).execute()
+
+    #printout number of cells appended (ie: 2 for email and name)
+    print('{0} cells appended.'.format(result \
+                                           .get('updates') \
+                                           .get('updatedCells')))
+
 
 if __name__ == '__main__':
     main()
