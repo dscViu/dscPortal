@@ -53,7 +53,7 @@ def getStudentInfo(request):
 # If modifying these scopes, delete the file token.pickle.
 #SCOPES = ['https://www.googleapis.com/auth/calendar.readonly']
 def index(request):
-    SCOPES = ['https://www.googleapis.com/auth/calendar.readonly']
+    SCOPES = ['https://www.googleapis.com/auth/calendar','https://www.googleapis.com/auth/spreadsheets']
     
     """Shows basic usage of the Google Calendar API.
     Prints the start and name of the next 10 events on the user's calendar.
@@ -78,7 +78,10 @@ def index(request):
             pickle.dump(creds, token)
 
     service = build('calendar', 'v3', credentials=creds)
-
+    service1 = build('sheets', 'v4', credentials=creds)
+   
+    #FIXME:How to concatenate build services
+    #service = build((['sheets', 'v4'], ['calendar', 'v3']), credentials=creds)
 
     # Calling the Calendar API
     now = datetime.datetime.utcnow().isoformat() + 'Z' # 'Z' indicates UTC time
@@ -147,7 +150,48 @@ def index(request):
         
         #get student name from post
         sName = request.POST.get('studentName')
-        print(sName)
+        sEmail = request.POST.get('email')
+        sMajor = request.POST.get('major')
+        sYear = request.POST.get('year')
+        #print(sName, sEmail, sMajor, sYear)
+
+
+        '''     If this is a POST request get info and add it to emailListSheet  '''
+        # The ID (and range if required) of spreadsheet.
+        emailListSheet = '1XmMCdfkYlmpSK-g64aLQcAaa5JXTnxQDpcJxD22BbyM' #test sheet
+
+        # Call the Sheets API
+   
+        range_name = 'emails' #name of the sheet. Appending at bottom of sheet
+        valueInputOption = "RAW" #input user data as is #TODO safe?
+   
+        values = [
+            [
+                sEmail, sName, sMajor, sYear
+            ],
+            # Additional rows ...
+        ]
+        body = {
+            'values': values   #dictionary of values
+        }
+        result = service1.spreadsheets().values().append(
+            spreadsheetId=emailListSheet, range=range_name,
+            valueInputOption='RAW', body=body).execute()
+   
+        #printout number of cells appended (ie: 2 for email and name)
+        print('{0} cells appended.'.format(result \
+                                               .get('updates') \
+                                               .get('updatedCells')))
+
+
+
+
+
+
+
+
+
+
 
 
         context = {
@@ -159,7 +203,6 @@ def index(request):
         # check whether it's valid:
         #if form.is_valid():
             # process the data in form.cleaned_data as required
-            # ... #FIXME: append to proper google sheet using google api
             # redirect to a new URL:
         
         return render(request, 'landingPage/index.html', context)
