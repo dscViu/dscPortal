@@ -3,10 +3,14 @@
   background-color: $color-grey-light-1;
   padding: 25rem 0;
   margin-top: -20vh;
+
+  @include respond(tab-port) {
+    padding: 20rem 0;
+  }
 }
 
 .section-features {
-  padding: 30rem 0;
+  padding: 20rem 0;
   background-image: linear-gradient(to right bottom,
     rgba($color-primary, 0.8),
     rgba($color-primary-light, 0.8),
@@ -26,17 +30,29 @@
   & > * {
     transform: skewY(7deg);
   }
+
+  @include respond(tab-port) {
+    padding: 15rem 0;
+  }
 }
 
 .section-members {
   background-color: $color-grey-light-1;
   padding: 25rem 0 15rem 0;
   margin-top: -10rem;
+
+  @include respond(tab-port) {
+    padding: 20rem 0 10rem 0;
+  }
 }
 
 .section-updates {
   position: relative;
-  padding: 10rem 0;
+  padding: 15rem 0;
+
+  @include respond(tab-port) {
+    padding: 10rem 0;
+  }
 }
 
 .section-register {
@@ -44,6 +60,9 @@
   background-image: linear-gradient(to right bottom,
     $color-primary, $color-primary-light, $color-primary-dark);
 
+  @include respond(tab-port) {
+    padding: 10rem 0;
+  }
 }
 
 .register {

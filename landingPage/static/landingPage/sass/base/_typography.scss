@@ -28,6 +28,11 @@ body {
     animation-name: moveInLeft;
     animation-duration: 1s;
     animation-timing-function:ease-out;
+
+    @include respond(phone) {
+      letter-spacing: 1rem;
+      font-family: 5rem;
+    }
   }
 
   &--sub {
@@ -39,6 +44,10 @@ body {
     animation-name: moveInRight;
     animation-duration: 1s;
     animation-timing-function:ease-out;
+
+    @include respond(phone) {
+      letter-spacing: .5rem;
+    }
   }   
 }
 
@@ -59,6 +68,15 @@ body {
   text-shadow: .2rem 1rem 3rem rgba($color-black, .3);
   // make some cool hover effects
   // for all headings
+
+  @include respond(tab-port) {
+    font-size: 3rem;
+  }
+
+  @include respond(phone) {
+    font-size: 2.5rem;
+  }
+
   &:hover {
     transform: skewY(5deg) skewX(15deg) scale(1.1);
     text-shadow: .5rem 1rem 2rem rgba($color-black, .4);
