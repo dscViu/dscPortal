@@ -63,7 +63,8 @@
 
     }
   }
-
+  
+  // rotation of the card
   &:hover &__side--front {
     transform: rotatey(-180deg);
   }
@@ -84,43 +85,36 @@
       background-image: linear-gradient(to right bottom,
       $color-warning, $color-warning-light, $color-warning-dark),
       url(../img/lenz.jpg);
-      //background-image: url("../img/lenz.jpg");
     }
 
     &--2 {
       background-image: linear-gradient(to right bottom,
       $color-success, $color-success-light, $color-success-dark),
       url(../img/phill.jpg);
-      //background-image: url(../img/phill.jpg);
-
     }
 
     &--3 {
       background-image: linear-gradient(to right bottom,
       $color-primary, $color-primary-light, $color-primary-dark),
       url(../img/matt.png);
-      //background-image: url(../img/matt.png);
     }
 
     &--4 {
       background-image: linear-gradient(to right bottom,
       $color-cyan, $color-cyan-light, $color-cyan-dark),
       url(../img/bohdan.png);
-      //background-image: url(../img/bohdan.png);
     }
 
     &--5 {
       background-image: linear-gradient(to right bottom,
       $color-indigo, $color-indigo-light, $color-indigo-dark),
       url(../img/liam.jpg);
-      //background-image: url(../img/liam.jpg);
     }
 
     &--6 {
       background-image: linear-gradient(to right bottom,
       $color-pink, $color-pink-light, $color-pink-dark),
       url(../img/faith.jpg);
-      //background-image: url(../img/faith.jpg);
     }
   }
 
@@ -222,13 +216,8 @@
   }
 
   &__icon-text {
+    margin-top: 5rem;
     font-size: 5rem;
     font-weight: 300;
-  }
-
-  &__icon-text-2 {
-    // temp code
-    font-size: 1.5rem;
-    text-transform: uppercase;
   }
 }

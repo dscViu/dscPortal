@@ -1,4 +1,4 @@
-// Reusable code, mixins are similar to functions
+// Reusable code, mixins are similar to void functions
 @mixin clearfix {
   &::after {
     content: "";
@@ -6,4 +6,22 @@
     // clear both floats
     clear: both;
   }
+}
+
+@mixin absCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin close {
+  color: $color-grey-dark;
+  position: absolute;
+  top: 1rem;
+  right: 2.5rem;
+  font-size: 3rem;
+  text-decoration: none;
+  display: inline-block;
+  line-height: 1;
 }
