@@ -106,6 +106,11 @@ body {
   font-weight: 700;
   text-transform: uppercase; }
 
+.heading-tertiary-big {
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-transform: uppercase; }
+
 .paragraph {
   font-size: 1.7rem; }
   .paragraph:not(last-child) {
@@ -206,6 +211,24 @@ body {
   color: #fff; }
   .btn--primary::after {
     background-color: #64b5f6; }
+
+.btn--success {
+  background-color: #81c784;
+  color: #fff; }
+  .btn--success::after {
+    background-color: #81c784; }
+
+.btn--warning {
+  background-color: #ffb74d;
+  color: #fff; }
+  .btn--warning::after {
+    background-color: #ffb74d; }
+
+.btn--danger {
+  background-color: #ff8a80;
+  color: #fff; }
+  .btn--danger::after {
+    background-color: #ff8a80; }
 
 .btn::after {
   content: "";
@@ -350,11 +373,9 @@ body {
     margin-bottom: 8rem;
     color: #fff; }
   .card__icon-text {
+    margin-top: 5rem;
     font-size: 5rem;
     font-weight: 300; }
-  .card__icon-text-2 {
-    font-size: 1.5rem;
-    text-transform: uppercase; }
 
 .composition {
   /* setting the position of the 3 photos to absolute
@@ -485,6 +506,81 @@ body {
 
 .form__radio-input:checked ~ .form__radio-label .form__radio-button::after {
   opacity: 1; }
+
+/*
+ *  This is the code for the popup that happens when
+ *  the button on the back of the cards is pressed.
+ *  This section is meant to show more in-depth
+ *  information about the Developers on the DSC team.
+ */
+.popup {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  z-index: 4000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 1s; }
+  .popup__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 65%;
+    background-color: #fff;
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    display: table;
+    overflow: hidden; }
+  .popup__left {
+    width: 30%;
+    display: table-cell; }
+  .popup__right {
+    padding: 15rem 5rem;
+    width: 70%;
+    display: table-cell;
+    vertical-align: top; }
+  .popup__img {
+    display: block;
+    width: 100%;
+    transform: scale(0.8);
+    border-radius: 3px; }
+  .popup--logo {
+    display: block;
+    background-size: cover;
+    width: 100%; }
+  .popup__text {
+    font-size: 1.6rem;
+    margin-bottom: 4rem;
+    -moz-column-count: 2;
+    -moz-column-count: 2;
+    -moz-column-gap: 4rem;
+    -webkit-column-count: 2;
+    -webkit-column-rule: 2px dotted #eee;
+    -webkit-column-gap: 4rem;
+    column-count: 2;
+    column-gap: 4rem;
+    column-rule: 2px dotted #eee;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -webkit-hyphens: auto; }
+  .popup:target {
+    opacity: 1;
+    visibility: visible; }
+  .popup__close:link, .popup__close:visited {
+    color: #777;
+    position: absolute;
+    top: 1rem;
+    right: 2.5rem;
+    font-size: 3rem;
+    text-decoration: none;
+    display: inline-block;
+    line-height: 1; }
+  .popup__close:hover {
+    color: #64b5f6; }
 
 /* Updates section */
 .updates {
