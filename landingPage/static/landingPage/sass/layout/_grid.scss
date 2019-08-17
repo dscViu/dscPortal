@@ -8,6 +8,15 @@
 
   &:not(:last-child) {
     margin-bottom: $gutter-verticle;
+
+    @include respond(tab-port) {
+      margin-bottom: $gutter-verticle-small;
+    }
+  }
+
+  @include respond(tab-port) {
+    max-width: 50rem;
+    padding: 0 3rem;
   }
   
   @include clearfix;
@@ -19,7 +28,18 @@
 
     &:not(:last-child) {
       margin-right: $gutter-horizontal;
+
+      @include respond(tab-port) {
+        width: 100% !important;
+        margin-right: 0;
+        margin-bottom: $gutter-verticle-small;
+      }
     }
+
+    @include respond(tab-port) {
+      width: 100% !important;
+    }
+
   }
   
   /* This is how your build a custom grid 

@@ -25,3 +25,45 @@
   display: inline-block;
   line-height: 1;
 }
+
+// This is the media query manager for the mobile code
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+1200 - 1800: This is our normal styles apply
+1800px:         Big Desktop screens
+
+$breakpoint argument choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1 em = 16px
+*/
+
+@mixin respond($breakpoint) {
+  // sass has programming language like control flow statements
+  @if $breakpoint == phone {
+    // is width < 600px
+    @media (max-width: 37.5em) { @content }; // 600px
+  }
+
+  @if $breakpoint == tab-port {
+    // is width < 900px
+    @media (max-width: 56.25em) { @content }; // 900px
+  }
+
+  @if $breakpoint == tab-land {
+    // is width <= 1200px
+    @media (max-width: 75em) { @content }; // 1200px
+  }
+
+  @if $breakpoint == big-desktop {
+    // is width >= 1200px
+    @media (min-width: 112.5) { @content }; // 1800 px
+  }
+}
