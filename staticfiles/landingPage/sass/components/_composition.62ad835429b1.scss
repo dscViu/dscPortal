@@ -1,0 +1,50 @@
+.composition {
+  /* setting the position of the 3 photos to absolute
+   * causes them to stack to the top left corner if its
+   * parent element, which in this case will cause
+   * them to stack to the .composition element, 
+   * so we need to set that element to relative
+   * */
+  position: relative;
+  &__photo {
+    width: 55%;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .4);
+    border-radius: 2px;
+    position: absolute;
+    z-index: 10;
+    // slow down the transition to make it more smooth
+    transition: all .2s;
+    // offset gives the gap between the border
+    outline-offset: 2rem;
+
+    &--p1 {
+      // move the picture up
+      left: 0;
+      top: -2rem;
+    }
+
+    &--p2 {
+      right: 0;
+      top: 2rem;
+    }
+    
+    &--p3 {
+      left: 20%;
+      top: 10rem;
+    }
+
+    &:hover {
+      // outline sets the blue border
+      outline: 1.5rem solid $color-primary;
+      transform: scale(1.05) translateY(-.5rem);
+      box-shadow: -2.5rem 4rem rgba($color-black, .5);
+      z-index: 20;
+    }
+  }
+  
+  // composition:hover composition__photo:not(:hover)
+  &:hover &__photo:not(:hover) {
+    transform: scale(.95)
+  }
+
+}
