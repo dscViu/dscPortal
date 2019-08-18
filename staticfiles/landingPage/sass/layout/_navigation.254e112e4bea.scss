@@ -1,0 +1,178 @@
+.navigation {
+
+  &__checkbox {
+    display: none;
+
+  }
+
+  &__button {
+    // building and positioning the
+    // actual button that we press
+    background-color: $color-white;
+    height: 7rem;
+    width: 7rem;
+    position: fixed;
+    top: 6rem;
+    right: 6rem;
+    border-radius: 50%;
+    // this z-index: must be larger than all others
+    z-index: 2000;
+    
+    // this centers the three lines from the hamburger menu
+    text-align: center;
+    cursor: pointer;
+  }
+
+  &__background {
+    // building and positioning the
+    // background color
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    position: fixed;
+    top: 6.5rem;
+    right: 6.5rem;
+    // new gradient
+    background-image: radial-gradient($color-primary,
+    $color-primary-light, $color-primary-dark);
+    z-index: 1000;
+    box-shadow: 0 1rem 3rem rgba($color-black, .5);
+    
+    // custom timing function
+    // https://easings.net/en#easeInOutQuint
+    // this is basically just manipulating a cubic function
+    // at certain coordinates in the first quadrant of the CP
+    transition: transform .8s cubic-bezier(0.86, 0, 0.07, 1);
+    //TODO: Hide scroll bar
+  }
+
+  &__nav {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1500;
+
+    // this hides the links
+    opacity: 0;
+    width: 0;
+    // this is for the menu opening animation
+    transition: all .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  &__list {
+    // this list gets centered inside the nav
+    // and then will be hidden, only to show
+    // when button is clicked
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    list-style: none;
+    // make perfectly center
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+  }
+
+  &__item {
+    margin: 1rem;
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      // inline-block important or padding will display wrong
+      // and translate's will not work.
+      display: inline-block;
+      font-size: 3rem;
+      font-weight: 300;
+      padding: 1rem 2rem;
+      color: $color-white;
+      text-decoration: none;
+      text-transform: uppercase;
+      background-image: linear-gradient(120deg, transparent 0%, transparent 50%, $color-white 50%);
+      background-size: 240%;
+      transition: all .4s;
+      
+      span {
+        display: inline-block;
+        margin-right: 1.5rem;
+      }
+    }
+
+    &:hover,
+    &:active {
+      // this and background-size: emulates a loading bar
+      background-position: 100%;
+      color: $color-primary;
+      transform: translateX(2rem);
+    }
+  }
+
+  // Icon Functionality
+  &__checkbox:checked ~ &__background {
+    // this is the check box hack. scale the blue background
+    // to simulate a menu
+    transform: scale(80);
+  }
+
+  &__checkbox:checked ~ &__nav {
+    // unhide the menu
+    opacity: 1;
+    width: 100%;
+  }
+
+  // Begin Building the navigation icon
+  &__icon {
+    position: relative;
+    margin-top: 3.4rem;
+    &,
+    &::before,
+    &::after {
+      // this draws the 3 lines
+      width: 3rem;
+      height: 2px;
+      background-color: $color-darkness;
+      display: inline-block;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      transition: all .2s;
+    }
+    
+    // this is the spacing inbetween the lines
+    &::before { top: -.8rem; }
+    &::after { top: .8rem; }
+  }
+
+  &__button:hover &__icon::before {
+    top: -1rem;
+  }
+
+  &__button:hover &__icon::after {
+    top: 1rem;
+  }
+
+  // select adjacent sibling
+  // this is the code the transforms our 
+  // three lines in an X pattern
+  &__checkbox:checked + &__button &__icon {
+    // hide the middle line on click
+    background-color: transparent;
+  }
+
+  &__checkbox:checked + &__button &__icon::before {
+    top: 0;
+    transform: rotate(135deg);
+  }
+
+  &__checkbox:checked + &__button &__icon::after {
+    top: 0;
+    transform: rotate(-135deg);
+  }
+}
