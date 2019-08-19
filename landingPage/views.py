@@ -65,6 +65,11 @@ def index(request):
     if os.path.exists('token.pickle'):
         with open('token.pickle', 'rb') as token:
             creds = pickle.load(token)
+
+    '''
+    #NOTE#: commented out for google cloud platform / app engine lauch (cannot write) ###
+        TODO:  Will creds expire???!
+
     # If there are no (valid) credentials available, let the user log in.
     if not creds or not creds.valid:
         if creds and creds.expired and creds.refresh_token:
@@ -76,6 +81,8 @@ def index(request):
         # Save the credentials for the next run
         with open('token.pickle', 'wb') as token:
             pickle.dump(creds, token)
+
+    '''
 
     service = build('calendar', 'v3', credentials=creds)
     service1 = build('sheets', 'v4', credentials=creds)
