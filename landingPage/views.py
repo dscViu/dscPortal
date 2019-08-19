@@ -27,37 +27,13 @@ from .models import DSCEvent
 
 # Create your views here.
 
-'''
-def getStudentInfo(request):
-    # if this is a POST request we need to process the form data
-    if request.method == 'POST':
-        # create a form instance and populate it with data from the request:
-        form = getStudentInfo(request.POST)
-        # check whether it's valid:
-        if form.is_valid():
-            # process the data in form.cleaned_data as required
-            # ...
-            # redirect to a new URL:
-            return HttpResponseRedirect('/thanks/') #TODO: Redirect to same page??? Or create thanks page
-
-    # if a GET (or any other method) we'll create a blank form
-    else:
-        form = getStudentInfo()
-
-#    return render(request, 'name.html', {'form': form}) #FIXME
-'''    
-
-
-''' #GCAL API '''
+''' GCAL API '''
 ### CREATING CALENDAR INSTANCE ###
 # If modifying these scopes, delete the file token.pickle.
 #SCOPES = ['https://www.googleapis.com/auth/calendar.readonly']
 def index(request):
     SCOPES = ['https://www.googleapis.com/auth/calendar','https://www.googleapis.com/auth/spreadsheets']
     
-    """Shows basic usage of the Google Calendar API.
-    Prints the start and name of the next 10 events on the user's calendar.
-    """
     creds = None
     # The file token.pickle stores the user's access and refresh tokens, and is
     # created automatically when the authorization flow completes for the first
@@ -68,7 +44,7 @@ def index(request):
 
     '''
     #NOTE#: commented out for google cloud platform / app engine lauch (cannot write) ###
-        TODO:  Will creds expire???!
+     #TODO1#:  Will creds expire???!
 
     # If there are no (valid) credentials available, let the user log in.
     if not creds or not creds.valid:
@@ -83,12 +59,11 @@ def index(request):
             pickle.dump(creds, token)
 
     '''
-
+    
+    #TODO#2: find out how to concatenate service and service1 into a single 
+    # build methods
     service = build('calendar', 'v3', credentials=creds)
     service1 = build('sheets', 'v4', credentials=creds)
-   
-    #FIXME:How to concatenate build services
-    #service = build((['sheets', 'v4'], ['calendar', 'v3']), credentials=creds)
 
     # Calling the Calendar API
     now = datetime.datetime.utcnow().isoformat() + 'Z' # 'Z' indicates UTC time
@@ -98,8 +73,7 @@ def index(request):
     events = events_result.get('items', [])
 
 
-    #declaring empty array to hold events
-    #cal = [] 
+    # Declaring empty array to hold event name and dates
     event_title_list = []
     event_date_list = []
     #tmfmt = '%d %B, %H:%M %p'             # Gives you date-time in the format '26 December, 10:00 AM'
@@ -117,8 +91,8 @@ def index(request):
      #   stime = dt.strftime(dtparse(start), format=tmfmt)
 
         #create object instance for each loop 
-#        DSCEvent.objects.create(dscevent_title=str(event['summary']), dscevent_date = stime )
-#        DSCEvent.objects.create(dscevent_title=str(event['summary']), dscevent_date = start )
+        #DSCEvent.objects.create(dscevent_title=str(event['summary']), dscevent_date = stime )
+        #DSCEvent.objects.create(dscevent_title=str(event['summary']), dscevent_date = start )
 
 
         event_title = event['summary']
@@ -127,18 +101,10 @@ def index(request):
         event_title_list.append(event_title)
         event_date_list.append(event_date)
         #print(start, event['summary'])
-#        item = str(event['summary']) + '  :  ' + str(start)
+        #item = str(event['summary']) + '  :  ' + str(start)
 
         #item = str(event['summary']) + '  :  ' + str(stime)
-        #cal.append(item)
        
-
-       #cal.append(start, event['summary'])
-        #cal.append(start)
-        #cal.append(event['summary'])
-        #cal.append('\n')
-
-
     dscevent_list = DSCEvent.objects.order_by('-dscevent_date')
     template = loader.get_template('landingPage/index.html')
 
@@ -151,7 +117,7 @@ def index(request):
     if request.method == 'POST':
         # create a form instance and populate it with data from the request:
         
-        #get post request data 
+        #Get post request data 
         print(request.POST)
         #print(request.POST.get('studentName'))
         
@@ -168,19 +134,36 @@ def index(request):
         emailListSheet = '1XmMCdfkYlmpSK-g64aLQcAaa5JXTnxQDpcJxD22BbyM' #test sheet
 
         # Call the Sheets API
-   
         range_name = 'emails' #name of the sheet. Appending at bottom of sheet
         valueInputOption = "RAW" #input user data as is #TODO safe?
    
+        '''
+        An array of array that holds the values to be inserted in the Google Sheeet.
+        Insert in 'rows' by default, unless specified otherwise. 
+        Each item in the inner-most array represents a cell.
+        Each item in the outer array represents a row.
+        '''
         values = [
             [
                 sEmail, sName, sMajor, sYear
             ],
             # Additional rows ...
         ]
+
+        '''
+        A dictionary of the values to be inserted in the Google Sheets
+        '''
         body = {
-            'values': values   #dictionary of values
+            'values': values   
         }
+
+        '''
+        Performing the actual insertion here with the parameters below:
+        - service1 calls the spreadsheet created earlier
+        - values.append() method adds 'values' at the next empty row
+        - range name: refers to the string name of the sheet (or range if other)
+        - valueInputOption='RAW' : takes the user input from the form 'as is'
+        '''
         result = service1.spreadsheets().values().append(
             spreadsheetId=emailListSheet, range=range_name,
             valueInputOption='RAW', body=body).execute()
@@ -191,43 +174,20 @@ def index(request):
                                                .get('updatedCells')))
 
 
-
-
-
-
-
-
-
-
-
-
         context = {
                 'event_title_list':event_title_list,
                 'event_date_list':event_date_list,
                 #'form':form,
                 }
-    
-        # check whether it's valid:
-        #if form.is_valid():
-            # process the data in form.cleaned_data as required
-            # redirect to a new URL:
         
         return render(request, 'landingPage/index.html', context)
         #return HttpResponseRedirect('/thanks/') #TODO: Redirect to same page??? Or create thanks page
 
-    # if a GET (or any other method) we'll create a blank form
+    # if a GET (or any other method) #TODO: This may not be req'd here
     else:
-        #form = StudentInfo()
-
-        
         context = {
                 'event_title_list':event_title_list,
                 'event_date_list':event_date_list,
-                #'form':form,
                 }
     
     return render(request, 'landingPage/index.html', context)
-
-
-   
-
