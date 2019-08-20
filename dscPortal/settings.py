@@ -26,7 +26,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
         'dscwebportal.appspot.com',
-        '.dscviu.ca'
+        '.dscviu.ca',
+        '127.0.0.1',
         ]
 
 
