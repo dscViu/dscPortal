@@ -1,4 +1,5 @@
 .card {
+
   // Basic Card Functionality
   perspective: 150rem;
   // for firefox
@@ -28,8 +29,7 @@
 
     // color for back of card
     &--back {
-    background-color: green;
-    transform: rotatey(180deg);
+    transform: rotateY(180deg);
 
       &-1 {
         background-image: linear-gradient(to right bottom,
@@ -61,6 +61,21 @@
         $color-pink, $color-pink-light, $color-pink-dark);
       }
 
+      &-7 {
+        background-image: linear-gradient(to right bottom,
+        $color-deep-purple, $color-deep-purple-light, $color-deep-purple-dark);
+      }
+
+      &-8 {
+        background-image: linear-gradient(to right bottom,
+        $color-primary, $color-primary-light, $color-primary-dark);
+      }
+
+      &-9 {
+        background-image: linear-gradient(to right bottom,
+        $color-darkness, $color-darkness-light, $color-darkness-dark);
+      }
+
     }
   }
   
@@ -90,7 +105,7 @@
     &--2 {
       background-image: linear-gradient(to right bottom,
       $color-success, $color-success-light, $color-success-dark),
-      url(../img/phill.jpg);
+      url(../img/faith.jpg);
     }
 
     &--3 {
@@ -114,7 +129,24 @@
     &--6 {
       background-image: linear-gradient(to right bottom,
       $color-pink, $color-pink-light, $color-pink-dark),
-      url(../img/faith.jpg);
+      url(../img/phill.jpg);
+    }
+
+    &--7 {
+      background-image: linear-gradient(to right bottom,
+      $color-deep-purple, $color-deep-purple-light, $color-deep-purple-dark),
+      url(../img/ryo.jpg);
+    }
+    &--8 {
+      background-image: linear-gradient(to right bottom,
+      $color-primary, $color-primary-light, $color-primary-dark),
+      url(../img/ezra.jpg);
+    }
+
+    &--9 {
+      background-image: linear-gradient(to right bottom,
+      $color-darkness, $color-darkness-light, $color-darkness-dark),
+      url(../img/new-member.jpg);
     }
   }
 
@@ -176,6 +208,27 @@
         rgba($color-pink-light, .85),
         rgba($color-pink-dark, .85));
     }
+
+    &--7 {
+      background-image: linear-gradient(to right bottom,
+        rgba($color-deep-purple, .85),
+        rgba($color-deep-purple-light, .85),
+        rgba($color-deep-purple-dark, .85));
+    }
+
+    &--8 {
+      background-image: linear-gradient(to right bottom,
+        rgba($color-primary, .85),
+        rgba($color-primary-light, .85),
+        rgba($color-primary-dark, .85));
+    }
+
+    &--9 {
+      background-image: linear-gradient(to right bottom,
+        rgba($color-darkness, .85),
+        rgba($color-darkness-light, .85),
+        rgba($color-darkness-dark, .85));
+    }
   }
   
   &__details {
@@ -207,6 +260,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
   }
   
   &__icon-box {
@@ -219,5 +274,66 @@
     margin-top: 5rem;
     font-size: 5rem;
     font-weight: 300;
+  }
+
+  // Re write for the responsiveness of the card. 
+  @include respond(tab-port) {
+    height: auto;
+    border-radius: 0;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .20);
+
+    &__side {
+      // must set height in both places
+      height: auto;
+      position: relative;
+      box-shadow: none;
+      border-radius: 0;
+      margin-bottom: -4rem;
+      padding-bottom: 4rem;
+      // color for back of card
+      &--back {
+      transform: rotateY(0);
+      -webkit-clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+      clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+      }
+    }
+    
+    // rotation of the card
+    &:hover &__side--front {
+      transform: rotatey(0);
+    }
+
+    &:hover &__side--back {
+      transform: rotateY(0);
+    }
+    
+    &__details {
+      padding: 3rem;
+    }
+
+    // Back Side Styling
+    //card--cta"> call to action
+    //card__icon-box
+    //card__icon-text
+    //card__icon-text-2
+    &--cta {
+      position: relative;
+      top: 0;
+      left: 0;
+      transform: translate(0);
+      width: 100%;
+      padding: 7rem 4rem 1rem 4rem;
+    }
+    
+    &__icon-box {
+      text-align: center;
+      margin-bottom: 3rem;
+      color: $color-white;
+    }
+
+    &__icon-text {
+      display: none;
+    }
+
   }
 }

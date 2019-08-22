@@ -10,16 +10,16 @@
   &__logo-box {
     text-align: center;
     margin-bottom: 8rem;
-    
+
     @include respond(tab-port) {
       margin-bottom: 6rem;
     }
   }
 
   &__logo {
-    width: 50rem;
+    width: 20rem;
     height: auto;
-    color: $color-primary;
+    background-color: $color-darkness-dark;
   }
 
   &__navigation {

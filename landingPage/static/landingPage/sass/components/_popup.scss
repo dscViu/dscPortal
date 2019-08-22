@@ -14,83 +14,85 @@
   left: 0;
   background-color: rgba($color-black, .85);
   z-index: 4000;
-
-  // This is how we hide pop ups to go to
-  // re-direct to id's and anchors in our page
   opacity: 0;
+  // This is how we hide pop ups to go to 
+  // re-direct to id's and anchors in our page
   visibility: hidden;
-  transition: all 1s;
+  transition: all .3s;
 
   &__content {
     // this is the content box
     @include absCenter;
 
-    width: 65%;
+    width: 75%;
     background-color: $color-white;
     box-shadow: 0 2rem 4rem rgba($color-black, .2);
     border-radius: 3px;
     display: table;
-    // hide the square edge images from overlapping our
-    // rounded corners
     overflow: hidden;
-    // opacity: 0;
-    // transform: translate(-50%, -50%) scale(.25);
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(.25);
     // the .2s is a delay
-    //transition: all .5s;
+    transition: all .5s .2s;
+    //
   }
 
-  &__left {
-    // these are all child elements in the content box.
+  &__left { // these are all child elements in the content box.
     // __content is a table, with the main left and right:
     // children being table cells. Like colums and rows,
     // for easy manipulation
-    width: 30%;
+    width: 33.333333%;
     display: table-cell;
+
+    @include respond(phone) {
+      display: none;
+    }
   }
 
   &__right {
-    padding: 15rem 5rem;
-    width: 70%;
+    padding: 3rem 5rem;
+    width: 66.6666667%;
     display: table-cell;
     // verticle align helps us align our right content
-    vertical-align: top;
+    vertical-align: middle;
   }
 
   &__img {
     display: block;
     width: 100%;
+    height: auto;
     transform: scale(.8);
     border-radius: 3px;
   }
 
-  &--logo {
+  &__img--logo {
     display: block;
-    background-size: cover;
     width: 100%;
+    height: auto;
+    transform: scale(.8);
   }
 
   &__text {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     margin-bottom: 4rem;
 
-
     // prefix for all browsers
-    -moz-column-count: 2;
-    -moz-column-count: 2;
-    -moz-column-gap: 4rem;
+    -moz-column-count: 1;
+    -moz-column-rule: 2;
+    -moz-column-gap: 2rem;
 
-    -webkit-column-count: 2;
+    -webkit-column-count: 1;
     -webkit-column-rule: 2px dotted $color-grey-light-2;
-    -webkit-column-gap: 4rem;
+    -webkit-column-gap: 2rem;
 
-    column-count: 2;
-    column-gap: 4rem;
+    column-count: 1;
     column-rule: 2px dotted $color-grey-light-2;
-
+    column-gap: 2rem;
 
     -moz-hyphens: auto;
     -ms-hyphens: auto;
     -webkit-hyphens: auto;
+    hyphens: auto;
   }
   
   // this is the open states
@@ -103,12 +105,12 @@
     visibility: visible;
   }
 
- //  &:target &__content {
- //    // have to repeat some code from __content
- //    // here, but its the only way to scale the animation
- //    opacity: 1;
- //    transform: translate(-50%, -50%) scale(1);
- //  }
+  &:target &__content {
+    // have to repeat some code from __content
+    // here, but its the only way to scale the animation
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
 
   &__close {
     &:link,

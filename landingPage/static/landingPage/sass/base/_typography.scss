@@ -18,7 +18,7 @@ body {
    * */
   backface-visibility: hidden;
   margin-bottom: 6rem;
- 
+
   &--main {
     display: block;
     font-size: 6rem;
@@ -29,9 +29,13 @@ body {
     animation-duration: 1s;
     animation-timing-function:ease-out;
 
+
     @include respond(phone) {
+      font-size: 4rem !important;
+      margin-top: 15rem;
       letter-spacing: 1rem;
-      font-family: 5rem;
+      font-family: 4rem;
+      font-size: 5rem;
     }
   }
 
@@ -68,7 +72,7 @@ body {
   text-shadow: .2rem 1rem 3rem rgba($color-black, .3);
   // make some cool hover effects
   // for all headings
-
+  
   @include respond(tab-port) {
     font-size: 3rem;
   }
@@ -82,6 +86,7 @@ body {
     text-shadow: .5rem 1rem 2rem rgba($color-black, .4);
   }
 }
+
 .heading-tertiary {
   font-size: $default-font-size;
   font-weight: 700;
