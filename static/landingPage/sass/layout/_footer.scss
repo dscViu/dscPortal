@@ -2,22 +2,35 @@
   background-color: $color-darkness-dark;
   padding: 15rem 0;
   font-size: 1.4rem;
+  
+  @include respond(tab-port) {
+    padding: 8rem 0;
+  }
 
   &__logo-box {
     text-align: center;
     margin-bottom: 8rem;
+
+    @include respond(tab-port) {
+      margin-bottom: 6rem;
+    }
   }
 
   &__logo {
-    width: 50rem;
+    width: 20rem;
     height: auto;
-    color: $color-primary;
+    background-color: $color-darkness-dark;
   }
 
   &__navigation {
     border-top: 1px solid $color-darkness-light;
     margin-bottom: 3px;
     display: inline-block;
+
+    @include respond(tab-port) {
+      width: 100%;
+      text-align: center;
+    }
   }
 
   &__list {
@@ -61,6 +74,11 @@
     padding-top: 1rem;
     width: 80%;
     float: right;
+
+    @include respond(tab-port) {
+      width: 100%;
+      float: none;
+    }
   }
 
 }

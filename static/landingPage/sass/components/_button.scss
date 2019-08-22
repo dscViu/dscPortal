@@ -54,13 +54,44 @@
       background-color: $color-white;
     }
   }
-
+  
+  // primary green
   &--primary {
     background-color: $color-primary;
     color: $color-white;
 
     &::after {
       background-color: $color-primary;
+    }
+  }
+  
+  // green
+  &--success {
+    background-color: $color-success;
+    color: $color-white;
+
+    &::after {
+      background-color: $color-success;
+    }
+  }
+  
+  // orange
+  &--warning {
+    background-color: $color-warning;
+    color: $color-white;
+
+    &::after {
+      background-color: $color-warning;
+    }
+  }
+  
+  // red
+  &--danger {
+    background-color: $color-danger;
+    color: $color-white;
+
+    &::after {
+      background-color: $color-danger;
     }
   }
   

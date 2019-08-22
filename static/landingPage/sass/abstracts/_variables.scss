@@ -30,7 +30,6 @@ $color-cyan: #4dd0e1;
 $color-cyan-light: #26c6da;
 $color-cyan-dark: #00bcd4;
 
-
 $color-danger: #ff8a80;
 $color-danger-light: #ff5252;
 $color-danger-dark: #ff1744;
@@ -38,7 +37,6 @@ $color-danger-dark: #ff1744;
 $color-pink: #f8bbd0;
 $color-pink-light: #f48fb1;
 $color-pink-dark: #f06292;
-
 
 $color-grey-light-1: #f7f7f7;
 $color-grey-light-2: #eee;
@@ -48,15 +46,16 @@ $color-darkness: #616161;
 $color-darkness-light:#424242;
 $color-darkness-dark: #212121;
 
-
 $color-white: #fff;
 $color-black: #000;
 
-
 // Font
 $default-font-size: 1.7rem;
+$large-font-size: 2.2rem;
+
 
 // Grid Variables
 $grid-width: 114rem;
 $gutter-verticle: 8rem;
+$gutter-verticle-small: 6rem;
 $gutter-horizontal: 6rem;

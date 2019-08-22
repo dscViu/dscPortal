@@ -1,0 +1,124 @@
+/*
+ *  This is the code for the popup that happens when
+ *  the button on the back of the cards is pressed.
+ *  This section is meant to show more in-depth
+ *  information about the Developers on the DSC team.
+ */
+
+.popup {
+  // this is the overlay
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba($color-black, .85);
+  z-index: 4000;
+  opacity: 0;
+  // This is how we hide pop ups to go to 
+  // re-direct to id's and anchors in our page
+  visibility: hidden;
+  transition: all .3s;
+
+  &__content {
+    // this is the content box
+    @include absCenter;
+
+    width: 75%;
+    background-color: $color-white;
+    box-shadow: 0 2rem 4rem rgba($color-black, .2);
+    border-radius: 3px;
+    display: table;
+    overflow: hidden;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(.25);
+    // the .2s is a delay
+    transition: all .5s .2s;
+    //
+  }
+
+  &__left { // these are all child elements in the content box.
+    // __content is a table, with the main left and right:
+    // children being table cells. Like colums and rows,
+    // for easy manipulation
+    width: 33.333333%;
+    display: table-cell;
+
+    @include respond(phone) {
+      display: none;
+    }
+  }
+
+  &__right {
+    padding: 3rem 5rem;
+    width: 66.6666667%;
+    display: table-cell;
+    // verticle align helps us align our right content
+    vertical-align: middle;
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transform: scale(.8);
+    border-radius: 3px;
+  }
+
+  &__img--logo {
+    display: block;
+    width: 100%;
+    height: auto;
+    transform: scale(.8);
+  }
+
+  &__text {
+    font-size: 1.4rem;
+    margin-bottom: 4rem;
+
+    // prefix for all browsers
+    -moz-column-count: 1;
+    -moz-column-rule: 2;
+    -moz-column-gap: 2rem;
+
+    -webkit-column-count: 1;
+    -webkit-column-rule: 2px dotted $color-grey-light-2;
+    -webkit-column-gap: 2rem;
+
+    column-count: 1;
+    column-rule: 2px dotted $color-grey-light-2;
+    column-gap: 2rem;
+
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+  }
+  
+  // this is the open states
+  &:target {
+    // this is the magical psuedo selector
+    // that allows us to raise the popup window
+    // with out javascript when the more button
+    // on the back of the card is pressed
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &:target &__content {
+    // have to repeat some code from __content
+    // here, but its the only way to scale the animation
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  &__close {
+    &:link,
+    &:visited {
+      @include close;
+    }
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}
