@@ -2,7 +2,6 @@
 
   &__checkbox {
     display: none;
-
   }
 
   &__button {
@@ -12,8 +11,8 @@
     height: 7rem;
     width: 7rem;
     position: fixed;
-    top: 6rem;
-    right: 6rem;
+    top: 4rem;
+    right: 4rem;
     border-radius: 50%;
     // this z-index: must be larger than all others
     z-index: 2000;
@@ -21,6 +20,16 @@
     // this centers the three lines from the hamburger menu
     text-align: center;
     cursor: pointer;
+
+    @include respond(tab-port) {
+      top: 3rem;
+      right: 4rem;
+    }
+
+    @include respond(phone) {
+      top: 2rem;
+      right: 3rem;
+    }
   }
 
   &__background {
@@ -30,8 +39,8 @@
     width: 6rem;
     border-radius: 50%;
     position: fixed;
-    top: 6.5rem;
-    right: 6.5rem;
+    top: 4.5rem;
+    right: 4.5rem;
     // new gradient
     background-image: radial-gradient($color-primary,
     $color-primary-light, $color-primary-dark);
@@ -44,6 +53,16 @@
     // at certain coordinates in the first quadrant of the CP
     transition: transform .8s cubic-bezier(0.86, 0, 0.07, 1);
     //TODO: Hide scroll bar
+    
+    @include respond(tab-port) {
+      top: 3.5rem;
+      right: 4.5rem;
+    }
+
+    @include respond(phone) {
+      top: 2.5rem;
+      right: 3.5rem;
+    }
   }
 
   &__nav {
@@ -55,6 +74,8 @@
     z-index: 1500;
 
     // this hides the links
+    // left -50% pushes links all the way off the page
+    left: -50%;
     opacity: 0;
     width: 0;
     // this is for the menu opening animation
@@ -67,12 +88,16 @@
     // when button is clicked
     position: absolute;
     top: 50%;
-    left: 50%;
+    // set left to 100% to bring links
+    // back to the middle of the page.
+    left: 100%;
     list-style: none;
     // make perfectly center
     transform: translate(-50%, -50%);
     text-align: center;
     width: 100%;
+    
+
   }
 
   &__item {
@@ -100,7 +125,7 @@
         margin-right: 1.5rem;
       }
     }
-
+    
     &:hover,
     &:active {
       // this and background-size: emulates a loading bar

@@ -19,6 +19,16 @@
   /*                 x y, x y, x y, */
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh,0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 75vh,0 100%);
+  
+  @include respond(tab-port) {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 79vh,0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 79vh,0 100%);
+  }
+
+  @include respond(phone) {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh,0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85vh,0 100%);
+  }
 
   &__logo-box {
     /* put the logo at the top left corner */
@@ -28,7 +38,13 @@
   }
 
   &__logo {
-    height: 3.5rem;
+    width: 6rem;
+    height: auto;
+
+    @include respond(phone) {
+      width: 7rem;
+      height: auto;
+    }
   }
 
   &__text-box {
