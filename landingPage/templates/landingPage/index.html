@@ -631,7 +631,10 @@ Markup uses BEM notation
         <div class="row">
           <div class="register">
             <div class="register__form">
-              <form action="#" class="form">
+              <form class="form" method="post">
+
+		{% csrf_token %}
+
                 <div class="u-margin-bottom-medium">
                   <h2 class="heading-secondary">
                     Want to join?
