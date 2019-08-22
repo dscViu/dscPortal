@@ -12,11 +12,13 @@
 .section-features {
   padding: 20rem 0;
   background-image: linear-gradient(to right bottom,
-    rgba($color-primary, 0.8),
-    rgba($color-primary-light, 0.8),
-    rgba($color-primary-dark, 0.8)),
+    rgba($color-primary, 0.7),
+    rgba($color-primary-light, 0.7),
+    rgba($color-primary-dark, 0.7)),
     url(../img/feature-section.jpg);
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   
   // Another way to give a non-rectangular
   // view other than clip
@@ -32,7 +34,15 @@
   }
 
   @include respond(tab-port) {
-    padding: 15rem 0;
+    padding: 10rem 0;
+    background-image: linear-gradient(to right bottom,
+      rgba($color-primary, 0.7),
+      rgba($color-primary-light, 0.7),
+      rgba($color-primary-dark, 0.7)),
+      url(../img/feature-section.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 }
 
@@ -48,10 +58,10 @@
 
 .section-updates {
   position: relative;
-  padding: 15rem 0;
+  padding: 10rem 0;
 
   @include respond(tab-port) {
-    padding: 10rem 0;
+    padding: 7rem 0;
   }
 }
 
@@ -72,14 +82,38 @@
     transparent 50%),
     url(../img/register-section.jpg);
   // background-size: 100%; means same as : cover;
-  background-size: 100%;
+  background-size: cover;
   border-radius: 3px;
   box-shadow: 0 1.5rem 4rem rgba($color-black, 0.2);
-  height: 70rem;
-  width: 100%;
+  
+  @include respond(tab-land) {
+    background-image: linear-gradient(105deg,
+      rgba($color-white, .85) 0%,
+      rgba($color-white, .85) 50%,
+      transparent 50%),
+      url(../img/register-section.jpg);
+    background-size: cover;
+  }
+
+  @include respond(tab-port) {
+    background-image: linear-gradient(to right,
+      rgba($color-white, .85) 0%,
+      rgba($color-white, .85) 80%),
+      url(../img/register-section.jpg);
+    background-size: cover;
+    
+  }
 
   &__form {
     width: 50%;
     padding: 6rem;
+
+    @include respond(tab-land) {
+      width: 50%;
+    }
+
+    @include respond(tab-port) {
+      width: 100%;
+    }
   }
 }
