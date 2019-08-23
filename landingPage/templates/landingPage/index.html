@@ -1,5 +1,4 @@
 {% load static %}
-
 <!DOCTYPE html>
 <!--
 Developed by the:
@@ -39,8 +38,9 @@ Developed by the:
  //******  ***//******/****** 
   //////  ///  ////// /////   
 
-Markup uses the BEM notation
+Markup uses BEM notation
 -->
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -51,7 +51,6 @@ Markup uses the BEM notation
   <link rel="shortcut icon" type="image/png" href="{% static 'landingPage/img/favicon.png' %}">
   <title>V.I.U Developer Student Club</title>
 </head>
-
   <body>
    <!-------------------------- 
      Navigation section 
@@ -78,17 +77,15 @@ Markup uses the BEM notation
               <span>02</span> Blog</a></li>
           <li class="navigation__item"><a class="navigation__link" href="#">
               <span>03</span> Projects</a></li>
-          <li class="navigation__item"><a class="navigation__link" href="#">
-              <span>04</span> Register</a></li>
         </ul>
       </nav>
     </div>
 
 
    <!-------------------------- Hero section  --------------------------------->
-    <header class="header">
+    <header id="header-top" class="header">
       <div class="header__logo-box">
-	      <img class="header__logo" src="{% static 'landingPage/img/logo-white.png' %}" alt="Logo">
+	      <img class="header__logo" src="{% static 'landingPage/img/header-logo.png' %}" alt="Developer Student Club Nanaimo">
       </div>
 
       <div class="header__text-box">
@@ -96,13 +93,13 @@ Markup uses the BEM notation
           <span class="heading-primary--main">Developer Student Club</span>
           <span class="heading-primary--sub">@Vancouver Island University</span>
         </h1>
-        <a class="btn btn--white btn--animated" href="#">Learn More</a>
+        <a class="btn btn--white btn--animated" href="#register">Register</a>
       </div>
     </header>
 
     <main>
-     <!------------------------- About Section ---------------------------------->
-      <section class="section-about">
+     <!------------------------- About Section ----------------------------------> 
+     <section class="section-about">
        <!-- u-center-text is a utitlity class -->
         <div class="u-center-text u-margin-bottom-big">
           <h2 class="heading-secondary" id="about">
@@ -239,7 +236,10 @@ Markup uses the BEM notation
                 <div class="card--cta">
                   <div class="card__icon-box">
                     <p class="card__icon-text">Contact</p>
-                    <p class="card__icon-text-2">Icons will go here</p>
+                    <!-- Button -->
+                    <div class="form__group u-margin-top-small">
+                      <a class=" btn btn--white" href="#popup-1">More</a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -256,7 +256,7 @@ Markup uses the BEM notation
                 </div>
                 <h4 class="card__heading">
                   <span class="card__heading-span card__heading-span--2">
-                    Phil Beton
+                    Faith Hewitt
                   </span>
                 </h4>
                 <div class="card__details">
@@ -274,7 +274,10 @@ Markup uses the BEM notation
                 <div class="card--cta">
                   <div class="card__icon-box">
                     <p class="card__icon-text">Contact</p>
-                    <p class="card__icon-text-2">Icons will go here</p>
+                    <!-- Button -->
+                    <div class="form__group u-margin-top-small">
+                      <a class=" btn btn--white" href="#popup-2">More</a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -309,7 +312,10 @@ Markup uses the BEM notation
                 <div class="card--cta">
                   <div class="card__icon-box">
                     <p class="card__icon-text">Contact</p>
-                    <p class="card__icon-text-2">Icons will go here</p>
+                    <!-- Button -->
+                    <div class="form__group u-margin-top-small">
+                      <a class=" btn btn--white" href="#popup-3">More</a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -329,7 +335,7 @@ Markup uses the BEM notation
                 </div>
                 <h4 class="card__heading">
                   <span class="card__heading-span card__heading-span--4">
-                    Bohdan Natsevych
+                    Dan Natsevych
                   </span>
                 </h4>
                 <div class="card__details">
@@ -347,7 +353,10 @@ Markup uses the BEM notation
                 <div class="card--cta">
                   <div class="card__icon-box">
                     <p class="card__icon-text">Contact</p>
-                    <p class="card__icon-text-2">Icons will go here</p>
+                    <!-- Button -->
+                    <div class="form__group u-margin-top-small">
+                      <a class=" btn btn--white" href="#popup-4">More</a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -364,7 +373,7 @@ Markup uses the BEM notation
                 </div>
                 <h4 class="card__heading">
                   <span class="card__heading-span card__heading-span--5">
-                    Liam De Worde
+                    Liam Kaufman-Willis
                   </span>
                 </h4>
                 <div class="card__details">
@@ -382,7 +391,10 @@ Markup uses the BEM notation
                 <div class="card--cta">
                   <div class="card__icon-box">
                     <p class="card__icon-text">Contact</p>
-                    <p class="card__icon-text-2">Icons will go here</p>
+                    <!-- Button -->
+                    <div class="form__group u-margin-top-small">
+                      <a class=" btn btn--white" href="#popup-5">More</a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -399,7 +411,7 @@ Markup uses the BEM notation
                 </div>
                 <h4 class="card__heading">
                   <span class="card__heading-span card__heading-span--6">
-                    Faith Hewitt
+                    Phil Beton
                   </span>
                 </h4>
                 <div class="card__details">
@@ -417,7 +429,127 @@ Markup uses the BEM notation
                 <div class="card--cta">
                   <div class="card__icon-box">
                     <p class="card__icon-text">Contact</p>
-                    <p class="card__icon-text-2">Icons will go here</p>
+                    <!-- Button -->
+                    <div class="form__group u-margin-top-small">
+                      <a class=" btn btn--white" href="#popup-6">More</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Third Row of Contact Cards  -->
+        <div class="row">
+          <!-- Card 4 -->
+          <div class="col-1-of-3">
+            <div class="card">
+              <div class="card__side card__side--front">
+                <div class="card__picture card__picture--7">
+                <!-- this means empty space -->
+                  &nbsp;
+                </div>
+                <h4 class="card__heading">
+                  <span class="card__heading-span card__heading-span--7">
+                    Ryo Kihara
+                  </span>
+                </h4>
+                <div class="card__details">
+                  <ul>
+                    <li>DSC Member</li>
+                    <li>What Should</li>
+                    <li>We write</li>
+                    <li>in this</li>
+                    <li>description</li>
+                  </ul>
+                </div>
+              <!-- Back of Card -->
+              </div>
+              <div class="card__side card__side--back card__side--back-7">
+                <div class="card--cta">
+                  <div class="card__icon-box">
+                    <p class="card__icon-text">Contact</p>
+                    <!-- Button -->
+                    <div class="form__group u-margin-top-small">
+                      <a class=" btn btn--white" href="#popup-7">More</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 8 -->
+          <div class="col-1-of-3">
+            <div class="card">
+              <div class="card__side card__side--front">
+                <div class="card__picture card__picture--8">
+                <!-- this means empty space -->
+                  &nbsp;
+                </div>
+                <h4 class="card__heading">
+                  <span class="card__heading-span card__heading-span--8">
+                    Ezra Macdonald
+                  </span>
+                </h4>
+                <div class="card__details">
+                  <ul>
+                    <li>DSC Member</li>
+                    <li>What Should</li>
+                    <li>We write</li>
+                    <li>in this</li>
+                    <li>description</li>
+                  </ul>
+                </div>
+              </div>
+              <!-- Back of Card -->
+              <div class="card__side card__side--back card__side--back-8">
+                <div class="card--cta">
+                  <div class="card__icon-box">
+                    <p class="card__icon-text">Contact</p>
+                    <!-- Button -->
+                    <div class="form__group u-margin-top-small">
+                      <a class=" btn btn--white" href="#popup-8">More</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 9 -->
+          <div class="col-1-of-3">
+            <div class="card">
+              <div class="card__side card__side--front">
+                <div class="card__picture card__picture--9">
+                <!-- this means empty space -->
+                  &nbsp;
+                </div>
+                <h4 class="card__heading">
+                  <span class="card__heading-span card__heading-span--9">
+                    New Member
+                  </span>
+                </h4>
+                <div class="card__details">
+                  <ul>
+                    <li>DSC Member</li>
+                    <li>We</li>
+                    <li>Want</li>
+                    <li>you</li>
+                    <li>to join</li>
+                  </ul>
+                </div>
+              </div>
+              <!-- Back of Card -->
+              <div class="card__side card__side--back card__side--back-9">
+                <div class="card--cta">
+                  <div class="card__icon-box">
+                    <p class="card__icon-text">Contact</p>
+                    <!-- Button -->
+                    <div class="form__group u-margin-top-small">
+                      <a class=" btn btn--white" href="#popup-9">More</a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -455,11 +587,12 @@ Markup uses the BEM notation
             </figure>
             <div class="updates__text">
               <h3 class="heading-tertiary u-margin-bottom-small">
-		      <!-- The Calender Updates from Django will go here --> 
-			{{ event_title_list.0 }}
+                The Calender Updates from Django will go here
               </h3>
               <p class="paragraph">
-	      		{{ event_date_list.0 }}
+                Lorem unde deserunt esse nostrum dolorum dolores.
+                Praesentium tenetur obcaecati tempora facilis facilis.
+                Dignissimos possimus at aliquid expedita temporibus Sint.
               </p>
             </div>
           </div>
@@ -478,11 +611,12 @@ Markup uses the BEM notation
             </figure>
             <div class="updates__text">
               <h3 class="heading-tertiary u-margin-bottom-small">
-		      <!-- The Calender Updates from Django will go here -->
-			{{ event_title_list.1 }}
+                The Calender Updates from Django will go here
               </h3>
               <p class="paragraph">
-	      		{{ event_date_list.1 }}
+                Lorem unde deserunt esse nostrum dolorum dolores.
+                Praesentium tenetur obcaecati tempora facilis facilis.
+                Dignissimos possimus at aliquid expedita temporibus Sint.
               </p>
             </div>
           </div>
@@ -493,11 +627,14 @@ Markup uses the BEM notation
       </section>
       
       <!--  Registration Form Section -->
-      <section class="section-register">
+      <section id="register" class="section-register">
         <div class="row">
           <div class="register">
             <div class="register__form">
-              <form action="#" class="form">
+              <form class="form" method="post">
+
+		{% csrf_token %}
+
                 <div class="u-margin-bottom-medium">
                   <h2 class="heading-secondary">
                     Want to join?
@@ -506,26 +643,35 @@ Markup uses the BEM notation
                 <!-- Name -->
                 <div class="form__group">
                   <input class="form__input" id="name" 
-                    type="text" placeholder="Full Name.." required>
+                    type="text" placeholder="Full Name.." name="studentName" required>
                   <label class="form__label" for="name">Full Name</label>
                 </div>
                 <!-- major -->
                 <div class="form__group">
                   <input class="form__input" id="major" 
-                    type="text" placeholder="Major.." required>
+                    type="text" placeholder="Major.." name="major" required>
                   <label class="form__label" for="major">Major</label>
                 </div>
                 <!-- email -->
                 <div class="form__group">
                   <input class="form__input" id="email" 
-                    type="email" placeholder="Email address.." required>
+                    type="email" placeholder="Email address.." name="email" required>
                   <label class="form__label" for="name">Email</label>
                 </div>
 
-                <!-- Radio Buttons -->
+                <!-- 
+                  Radio Button Hack
+                  -------------
+                  The Beloow code is a set-up for the radio button hack.
+                  The same technique used in creating the naviagation button.
+                  The CSS does the majority of the magic, how-ever since we cannot
+                  directly style the radio buttons, we must assiociate the input
+                  radio button elemement with a label, then style the label. Notice
+                  the input tags id element will match the label tags for elemement
+                -->
                 <div class="form__group">
                   <div class="form__radio-group">
-                    <input class="form__radio-input" type="radio" id="year1" name="year">
+                    <input class="form__radio-input" type="radio" id="year1" name="year" value=1>
                     <label class="form__radio-label" for="year1">
                       <span class="form__radio-button"></span>
                       1st year
@@ -533,7 +679,7 @@ Markup uses the BEM notation
                   </div>
 
                   <div class="form__radio-group">
-                    <input class="form__radio-input" type="radio" id="year2" name="year">
+                    <input class="form__radio-input" type="radio" id="year2" name="year" value=2>
                     <label class="form__radio-label" for="year2">
                       <span class="form__radio-button"></span>
                       2nd year
@@ -541,7 +687,7 @@ Markup uses the BEM notation
                   </div>
 
                   <div class="form__radio-group">
-                    <input class="form__radio-input" type="radio" id="year3" name="year">
+                    <input class="form__radio-input" type="radio" id="year3" name="year" value=3>
                     <label class="form__radio-label" for="year3">
                       <span class="form__radio-button"></span>
                       3rd year
@@ -549,7 +695,7 @@ Markup uses the BEM notation
                   </div>
 
                   <div class="form__radio-group">
-                    <input class="form__radio-input" type="radio" id="year4" name="year">
+                    <input class="form__radio-input" type="radio" id="year4" name="year" value=4>
                     <label class="form__radio-label" for="year4">
                       <span class="form__radio-button"></span>
                       4th year
@@ -558,7 +704,7 @@ Markup uses the BEM notation
                 </div>
                 
                 <div class="form__group u-margin-top-small">
-                  <button class=" btn btn--primary" href="#">Register</button>
+                  <button class=" btn btn--primary" href="#">Submit</button>
                 </div>
               </form>
             </div>
@@ -569,9 +715,11 @@ Markup uses the BEM notation
 
     <!----------------------- Footer ---------------------------------->
     <footer class="footer">
+      <div class="u-center-text u-margin-bottom-big">
+        <a class="btn-text" href="#header-top">Back to top</a>
+      </div>
       <div class="footer__logo-box">
-        <!--TODO: DJANGO -->
-	<img src="{% static 'landingPage/img/logo-white.png' %}" alt="Logo">
+	      <img class="footer__logo" src="{% static 'landingPage/img/footer-logo.png' %}" alt="DSC Nanaimo">
       </div>
       <div class="row">
         <div class="col-1-of-2">
@@ -580,7 +728,7 @@ Markup uses the BEM notation
               <li class="li footer__item"><a class="footer__link" href="#">V.I.U CS</a></li>
               <li class="li footer__item"><a class="footer__link" href="#">Contact us</a></li>
               <li class="li footer__item"><a class="footer__link" href="#">Our GitLab</a></li>
-              <li class="li footer__item"><a class="footer__link" href="#">Django Docs</a></li>
+              <li class="li footer__item"><a class="footer__link" href="#">MDN Docs</a></li>
               <li class="li footer__item"><a class="footer__link" href="#">FSF</a></li>
             </ul>
           </div>
@@ -590,9 +738,10 @@ Markup uses the BEM notation
             Developed by the <a class="footer__link" href="#">VIU DSC</a>.
             Powered by <a class="footer__link" href="#">Python and Django</a>.
             Copyright &copy; by the V.I.U Developer Student Club.
-            This is an open-source project, we encourage anyone to clone, hack-on, change or modify the
-            code and contribute. <a class="footer__link" href="#">use the source luke</a>.
-            Credit for photos goes to the talented
+            This is an open-source project, we encourage anyone to clone, 
+            hack-on, change or modify the
+            code and contribute. <a class="footer__link" href="#">use the source luke</a>
+            . Credit for photos goes to the talented
             photographers over at <a class="footer__link" href="#">unsplash</a>.
             The colorscheme is a carefully chosen pallete of gradients from
             <a class="footer__link" href="#">Material Design</a>.
@@ -601,8 +750,250 @@ Markup uses the BEM notation
       </div>
     </footer>
     <!----------------------- End Footer ---------------------------------->
+  
+    <!-- Pop-ups from cards -->
+    <!-- Pop up 1 -->
+    <div id="popup-1" class="popup">
+      <div class="popup__content">
+        <div class="popup__left">
+		<img class="popup__img" src="{% static 'landingPage/img/lenz-popup.jpg' %}" alt="Lenz T Paul">
+		<img class="popup__img--logo" src="{% static 'landingPage/img/dsc-logo.jpg' %}" alt="VIU DSC">
+        </div>
+        <div class="popup__right">
+          <!-- this is the close button -->
+          <a class="popup__close" href="#section-members">&times;</a>
+          <h2 class="heading-secondary u-margin-bottom-small">Lenz T Paul</h2>
+          <h3 class="heading-tertiary-big u-margin-bottom-small">DSC &ndash; Lead</h3>
+          <p class="popup__text">
+            Amet porro voluptate ad recusandae eligendi Tempore sed at quo quia
+            similique? Similique dicta delectus doloribus magni quo adipisci 
+            eligendi illo! Enim maiores quos expedita aliquam dolore aperiam Minima 
+            ipsam quis ex maxime ducimus animi? Architecto labore magni quas 
+            architecto corporis Dolorum nesciunt cupiditate animi quam labore!
+            Dolorem error nam nostrum illum et culpa, dolorum iusto Facere temporibus
+            neque iusto doloremque asperiores atque Mollitia amet nemo ullam maxime 
+            ratione? Illum.
+          </p>
+          <!-- Contact Icons here -->
+        </div>
+      </div>
+    </div>
 
+    <!-- Pop up 2  -->
+    <div id="popup-2" class="popup">
+      <div class="popup__content">
+        <div class="popup__left">
+		<img class="popup__img" src="{% static 'landingPage/img/faith-popup.jpg' %}" alt="Faith Hewitt">
+		<img class="popup__img--logo" src="{% static 'landingPage/img/dsc-logo.jpg' %}" alt="VIU DSC">
+        </div>
+        <div class="popup__right">
+          <!-- this is the close button -->
+          <a class="popup__close" href="#section-members">&times;</a>
+          <h2 class="heading-secondary u-margin-bottom-small">Faith Hewitt</h2>
+          <h3 class="heading-tertiary-big u-margin-bottom-small">DSC &ndash; Member </h3>
+          <p class="popup__text">
+            Amet porro voluptate ad recusandae eligendi Tempore sed at quo quia
+            similique? Similique dicta delectus doloribus magni quo adipisci 
+            eligendi illo! Enim maiores quos expedita aliquam dolore aperiam Minima 
+            ipsam quis ex maxime ducimus animi? Architecto labore magni quas Architecto
+            corporis Dolorum nesciunt cupiditate animi quam labore!
+            Dolorem error nam nostrum illum et culpa, dolorum iusto Facere temporibus
+            neque iusto doloremque asperiores atque Mollitia amet nemo ullam maxime 
+            ratione? Illum.
+          </p>
+          <!-- Contact Icons here -->
+        </div>
+      </div>
+    </div>
 
+    <!-- Pop up 3  -->
+    <div id="popup-3" class="popup">
+      <div class="popup__content">
+        <div class="popup__left">
+		<img class="popup__img" src="{% static 'landingPage/img/matt-popup.jpg' %}" alt="Matt Williams">
+		<img class="popup__img--logo" src="{% static 'landingPage/img/dsc-logo.jpg' %}" alt="VIU DSC">
+        </div>
+        <div class="popup__right">
+          <!-- this is the close button -->
+          <a class="popup__close" href="#section-members">&times;</a>
+          <h2 class="heading-secondary u-margin-bottom-small">Matt Williams</h2>
+          <h3 class="heading-tertiary-big u-margin-bottom-small">DSC &ndash; Member</h3>
+          <p class="popup__text">
+            Amet porro voluptate ad recusandae eligendi Tempore sed at quo quia
+            similique? Similique dicta delectus doloribus magni quo adipisci 
+            eligendi illo! Enim maiores quos expedita aliquam dolore aperiam Minima 
+            ipsam quis ex maxime ducimus animi? Architecto labore magni quas 
+            architecto corporis Dolorum nesciunt cupiditate animi quam labore!
+            Dolorem error nam nostrum illum et culpa, dolorum iusto Facere temporibus
+            neque iusto doloremque asperiores atque Mollitia amet nemo ullam maxime 
+            ratione? Illum.
+          </p>
+          <!-- Contact Icons here -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Pop up 4  -->
+    <div id="popup-4" class="popup">
+      <div class="popup__content">
+        <div class="popup__left">
+		<img class="popup__img" src="{% static 'landingPage/img/bohdan-popup.png' %}" alt="Bohdan Natsevych">
+		<img class="popup__img--logo" src="{% static 'landingPage/img/dsc-logo.jpg' %}" alt="VIU DSC">
+        </div>
+        <div class="popup__right">
+          <!-- this is the close button -->
+          <a class="popup__close" href="#section-members">&times;</a>
+          <h2 class="heading-secondary u-margin-bottom-small">Bohdan Natsevych</h2>
+          <h3 class="heading-tertiary-big u-margin-bottom-small">DSC &ndash; Member</h3>
+          <p class="popup__text">
+            Amet porro voluptate ad recusandae eligendi Tempore sed at quo quia
+            similique? Similique dicta delectus doloribus magni quo adipisci 
+            eligendi illo! Enim maiores quos expedita aliquam dolore aperiam Minima 
+            ipsam quis ex maxime ducimus animi? Architecto labore magni quas 
+            architecto corporis Dolorum nesciunt cupiditate animi quam labore!
+            Dolorem error nam nostrum illum et culpa, dolorum iusto Facere temporibus
+            neque iusto doloremque asperiores atque Mollitia amet nemo ullam maxime 
+            ratione? Illum.
+          </p>
+          <!-- Contact Icons here -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Pop up 5  -->
+    <div id="popup-5" class="popup">
+      <div class="popup__content">
+        <div class="popup__left">
+		<img class="popup__img" src="{% static 'landingPage/img/liam-popup.jpg' %}" alt="Liam Kaufman-Willis">
+		<img class="popup__img--logo" src="{% static 'landingPage/img/dsc-logo.jpg' %}" alt="VIU DSC">
+        </div>
+        <div class="popup__right">
+          <!-- this is the close button -->
+          <a class="popup__close" href="#section-members">&times;</a>
+          <h2 class="heading-secondary u-margin-bottom-small">Liam Kaufman-Willis</h2>
+          <h3 class="heading-tertiary-big u-margin-bottom-small">DSC &ndash; Member</h3>
+          <p class="popup__text">
+            Amet porro voluptate ad recusandae eligendi Tempore sed at quo quia
+            similique? Similique dicta delectus doloribus magni quo adipisci 
+            eligendi illo! Enim maiores quos expedita aliquam dolore aperiam Minima 
+            ipsam quis ex maxime ducimus animi? Architecto labore magni quas 
+            architecto corporis Dolorum nesciunt cupiditate animi quam labore!
+            Dolorem error nam nostrum illum et culpa, dolorum iusto Facere temporibus
+            neque iusto doloremque asperiores atque Mollitia amet nemo ullam maxime 
+            ratione? Illum.
+          </p>
+          <!-- Contact Icons here -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Pop up 6  -->
+    <div id="popup-6" class="popup">
+      <div class="popup__content">
+        <div class="popup__left">
+		<img class="popup__img" src="{% static 'landingPage/img/phil-popup.jpg' %}" alt="Phil Beton">
+		<img class="popup__img--logo" src="{% static 'landingPage/img/dsc-logo.jpg' %}" alt="VIU DSC">
+        </div>
+        <div class="popup__right">
+          <!-- this is the close button -->
+          <a class="popup__close" href="#section-members">&times;</a>
+          <h2 class="heading-secondary u-margin-bottom-small">Phil Beton</h2>
+          <h3 class="heading-tertiary-big u-margin-bottom-small">DSC &ndash; Member</h3>
+          <p class="popup__text">
+            Amet porro voluptate ad recusandae eligendi Tempore sed at quo quia
+            similique? Similique dicta delectus doloribus magni quo adipisci 
+            eligendi illo! Enim maiores quos expedita aliquam dolore aperiam Minima 
+            ipsam quis ex maxime ducimus animi? Architecto labore magni quas 
+            architecto corporis Dolorum nesciunt cupiditate animi quam labore!
+            Dolorem error nam nostrum illum et culpa, dolorum iusto Facere temporibus
+            neque iusto doloremque asperiores atque Mollitia amet nemo ullam maxime 
+            ratione? Illum.
+          </p>
+          <!-- Contact Icons here -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Pop up 7  -->
+    <div id="popup-7" class="popup">
+      <div class="popup__content">
+        <div class="popup__left">
+		<img class="popup__img" src="{% static 'landingPage/img/ryo-popup.jpg' %}" alt="Ryo Kihara">
+		<img class="popup__img--logo" src="{% static 'landingPage/img/dsc-logo.jpg' %}" alt="VIU DSC">
+        </div>
+        <div class="popup__right">
+          <!-- this is the close button -->
+          <a class="popup__close" href="#section-members">&times;</a>
+          <h2 class="heading-secondary u-margin-bottom-small">Ryo Kihara</h2>
+          <h3 class="heading-tertiary-big u-margin-bottom-small">DSC &ndash; Member</h3>
+          <p class="popup__text">
+            Amet porro voluptate ad recusandae eligendi Tempore sed at quo quia
+            similique? Similique dicta delectus doloribus magni quo adipisci 
+            eligendi illo! Enim maiores quos expedita aliquam dolore aperiam Minima 
+            ipsam quis ex maxime ducimus animi? Architecto labore magni quas 
+            architecto corporis Dolorum nesciunt cupiditate animi quam labore!
+            Dolorem error nam nostrum illum et culpa, dolorum iusto Facere temporibus
+            neque iusto doloremque asperiores atque Mollitia amet nemo ullam maxime 
+            ratione? Illum.
+          </p>
+          <!-- Contact Icons here -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Pop up 8  -->
+    <div id="popup-8" class="popup">
+      <div class="popup__content">
+        <div class="popup__left">
+		<img class="popup__img" src="{% static 'landingPage/img/ezra-popup.jpg' %}" alt="Ezra Macdonald">
+		<img class="popup__img--logo" src="{% static 'landingPage/img/dsc-logo.jpg' %}" alt="VIU DSC">
+        </div>
+        <div class="popup__right">
+          <!-- this is the close button -->
+          <a class="popup__close" href="#section-members">&times;</a>
+          <h2 class="heading-secondary u-margin-bottom-small">Ezra Macdonald</h2>
+          <h3 class="heading-tertiary-big u-margin-bottom-small">DSC &ndash; Member</h3>
+          <p class="popup__text">
+            Amet porro voluptate ad recusandae eligendi Tempore sed at quo quia
+            similique? Similique dicta delectus doloribus magni quo adipisci 
+            eligendi illo! Enim maiores quos expedita aliquam dolore aperiam Minima 
+            ipsam quis ex maxime ducimus animi? Architecto labore magni quas 
+            architecto corporis Dolorum nesciunt cupiditate animi quam labore!
+            Dolorem error nam nostrum illum et culpa, dolorum iusto Facere temporibus
+            neque iusto doloremque asperiores atque Mollitia amet nemo ullam maxime 
+            ratione? Illum.
+          </p>
+          <!-- Contact Icons here -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Pop up 9  -->
+    <div id="popup-9" class="popup">
+      <div class="popup__content">
+        <div class="popup__left">
+		<img class="popup__img" src="{% static 'landingPage/img/new-member-popup.png' %}" alt="new member">
+		<img class="popup__img--logo" src="{% static 'landingPage/img/dsc-logo.jpg' %}" alt="VIU DSC">
+        </div>
+        <div class="popup__right">
+          <!-- this is the close button -->
+          <a class="popup__close" href="#section-members">&times;</a>
+          <h2 class="heading-secondary u-margin-bottom-small">New Member</h2>
+          <h3 class="heading-tertiary-big u-margin-bottom-small">DSC &ndash;Member</h3>
+          <p class="popup__text">
+            Amet porro voluptate ad recusandae eligendi Tempore sed at quo quia
+            similique? Similique dicta delectus doloribus magni quo adipisci 
+            eligendi illo! Enim maiores quos expedita aliquam dolore aperiam Minima 
+            ipsam quis ex maxime ducimus animi? Architecto labore magni quas 
+            architecto corporis Dolorum nesciunt cupiditate animi quam labore!
+            Dolorem error nam nostrum illum et culpa, dolorum iusto Facere temporibus
+            neque iusto doloremque asperiores atque Mollitia amet nemo ullam maxime 
+            ratione? Illum.
+          </p>
+          <!-- Contact Icons here -->
+        </div>
+      </div>
+    </div>
    <!-- 
     =============================================================
     This is a light weight custom grid, using float.

@@ -1,0 +1,20 @@
+.bg-video {
+  // code the container
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: .3;
+  overflow: hidden;
+
+  &__content {
+    height: 100%;
+    width: 100%;
+    // object-fit is newer element
+    // fills entire parent while still
+    // maintaining aspect ratio
+    object-fit: cover;
+  }
+}
