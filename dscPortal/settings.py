@@ -12,22 +12,8 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 
-#added for heroku
-import django_heroku
-#added for heroku sqlite local and postgres remote
-import dj_database_url
-import dotenv
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-# Added for heroku to use postgres remote and sqlite locally
-
-'''
-dotenv_file = os.path.join(BASE_DIR, ".env")
-if os.path.isfile(dotenv_file):
-    dotenv.load_dotenv(dotenv_file)
-'''
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
@@ -38,15 +24,19 @@ SECRET_KEY = ')!8tts7md%7!#p$*t$*o)@s*i!$g1fru+55p5*ql-7f%+_b^gg'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+        'dscwebportal.appspot.com',
+        '.dscviu.ca',
+        '127.0.0.1',
+        ]
 
 
 # Application definition
 
 INSTALLED_APPS = [
     'landingPage.apps.LandingpageConfig',
-    'announcementWall.apps.AnnouncementwallConfig',
-    'eventCalendar.apps.EventcalendarConfig',
+#    'announcementWall.apps.AnnouncementwallConfig',
+#    'eventCalendar.apps.EventcalendarConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -57,8 +47,8 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    #added for heroku
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    #added for heroku [whitenoise]
+#    'whitenoise.middleware.WhiteNoiseMiddleware',
     #
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -92,6 +82,9 @@ WSGI_APPLICATION = 'dscPortal.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+DATABASES = { }
+
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -102,6 +95,7 @@ DATABASES = {
         'PORT' : '5432',
     }
 }
+'''
 
 
 # Password validation
@@ -140,14 +134,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+#PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
+#STATIC_URL = 'https://storage.googleapis.com/dscwebportal/static/'
+#STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
+STATIC_ROOT = 'static'
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 #added for heroku
-django_heroku.settings(locals())
+##django_heroku.settings(locals())
 
 #added for heroku
 #del DATABASES['default']['OPTIONS']['sslmode']

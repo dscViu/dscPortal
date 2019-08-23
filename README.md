@@ -59,9 +59,8 @@ $ pip3 install -r requirements.txt
 
 ### Django specific commands are next to manage the built-in server for development with manage.py
 
+
 #### Start the server
 ```
 $ python3 manage.py runserver
 ```
-
-
