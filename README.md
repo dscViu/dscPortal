@@ -45,8 +45,8 @@ This application is using Python/Django as the backend language, Postgres for th
 #### Debian/Ubuntu base
 ```
 $ sudo apt install python3-pip
-$ sudo apt install libpq-dev
 $ sudo apt install python3-venv
+$ sudo apt install libpq-dev
 ```
 
 ### In the project root folder, create a virtual environment, activate it, and install all dependencies via requirements.txt
@@ -58,3 +58,9 @@ $ pip3 install -r requirements.txt
 ```
 
 ### Django specific commands are next to manage the built-in server for development with manage.py
+
+
+#### Start the server
+```
+$ python3 manage.py runserver
+```
