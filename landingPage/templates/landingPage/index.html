@@ -704,8 +704,9 @@ Markup uses BEM notation
                 </div>
                 
                 <div class="form__group u-margin-top-small">
-                  <button class=" btn btn--primary" href="#">Submit</button>
+                  <button class=" btn btn--primary">Submit</button>
                 </div>
+
               </form>
             </div>
           </div>
@@ -994,6 +995,41 @@ Markup uses BEM notation
         </div>
       </div>
     </div>
+   <!-- Pop up 10  -->
+    <div id="popup-10" class="popup">
+      <div class="popup__content">
+        <div class="popup__back">
+          <!-- this is the close button -->
+          <a class="popup__close" href="#section-register">&times;</a>
+          <p class="popup__msg">Thank you for subscribing!</p>
+        </div>
+      </div>
+    </div>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+   <script type="text/javascript">
+       $(".form").submit(function(e){
+	// prevent from normal form behaviour
+      	e.preventDefault();
+    	// serialize the form data
+      	var serializedData = $(this).serialize();
+      	$.ajax({
+      		type : 'POST',
+      		url :  '',
+      		data : serializedData,
+      		success : function(response){
+			//reset the form after successful submit
+      			location.href='#popup-10';
+      		},
+      		error : function(response){
+      			console.log(response)
+      		}
+
+      	});
+      	return false;
+   });
+
+</script>
    <!-- 
     =============================================================
     This is a light weight custom grid, using float.

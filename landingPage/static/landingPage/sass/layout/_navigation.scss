@@ -40,6 +40,7 @@
     border-radius: 50%;
     position: fixed;
     top: 4.5rem;
+    opacity: 0;
     right: 4.5rem;
     // new gradient
     background-image: radial-gradient($color-primary,
@@ -51,7 +52,7 @@
     // https://easings.net/en#easeInOutQuint
     // this is basically just manipulating a cubic function
     // at certain coordinates in the first quadrant of the CP
-    transition: transform .8s cubic-bezier(0.86, 0, 0.07, 1);
+    transition: all .8s cubic-bezier(0.86, 0, 0.07, 1);
     //TODO: Hide scroll bar
     
     @include respond(tab-port) {
@@ -79,7 +80,7 @@
     opacity: 0;
     width: 0;
     // this is for the menu opening animation
-    transition: all .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: all .8s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity;
   }
 
   &__list {
@@ -140,6 +141,7 @@
     // this is the check box hack. scale the blue background
     // to simulate a menu
     transform: scale(80);
+    opacity: 1;
   }
 
   &__checkbox:checked ~ &__nav {

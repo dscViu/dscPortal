@@ -28,6 +28,7 @@ ALLOWED_HOSTS = [
         'dscwebportal.appspot.com',
         '.dscviu.ca',
         '127.0.0.1',
+        '192.168.0.20',
         ]
 
 
