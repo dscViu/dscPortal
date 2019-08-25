@@ -190,11 +190,17 @@ def index(request):
         ''' 
         If this is a POST request get info and add it to emailListSheet on Google Drive
         '''
-        # The ID (and range if required) of spreadsheet.
-        emailListSheet = '1XmMCdfkYlmpSK-g64aLQcAaa5JXTnxQDpcJxD22BbyM' #test sheet
 
+        # The ID (and range if required) of spreadsheet.
+        ''' 
+        Sheet/Spreadsheet ID are located in the URL
+        ie: https://docs.google.com/spreadsheets/d/spreadsheetId/edit#gid=sheetId
+        '''
+
+        #emailListSheet = '1XmMCdfkYlmpSK-g64aLQcAaa5JXTnxQDpcJxD22BbyM' #test sheet
+        emailListSheet = '1lBNP9sjGrK7RmI9AdI-GpIE5SFetTy33vUTFJKtm4XQ'
         # Call the Sheets API
-        range_name = 'emails' #name of the sheet. Appending at bottom of sheet
+        range_name = 'from webpage' #name of the sheet. Appending at bottom of sheet
         valueInputOption = "RAW" #input user data as is #TODO safe?
    
         '''
