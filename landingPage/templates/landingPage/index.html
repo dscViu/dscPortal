@@ -1019,6 +1019,13 @@ Markup uses BEM notation
       		data : serializedData,
       		success : function(response){
 			//reset the form after successful submit
+                $("#name").val('');
+                $("#major").val('');
+                $("#email").val ('');
+                 $("#year1").prop('checked', false);;
+                $("#year2").prop('checked', false);;
+                $("#year3").prop('checked', false);;
+                $("#year4").prop('checked', false);;
       			location.href='#popup-10';
       		},
       		error : function(response){
