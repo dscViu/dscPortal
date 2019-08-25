@@ -170,7 +170,7 @@ def index(request):
         If this is a POST request get info and add it to emailListSheet on Google Drive
         '''
         # The ID (and range if required) of spreadsheet.
-        emailListSheet = '1Igam7aewXeciYr2L0Ce3MWM-h7TsoTNJ8e5btN6RynA' #test sheet
+        emailListSheet = '1lBNP9sjGrK7RmI9AdI-GpIE5SFetTy33vUTFJKtm4XQ' #test sheet
 
         # Call the Sheets API
         range_name = 'emails' #name of the sheet. Appending at bottom of sheet
