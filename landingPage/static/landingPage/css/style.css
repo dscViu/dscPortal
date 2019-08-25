@@ -15,7 +15,7 @@
   Order: base " typography > general layout > page layout > components
  * */
 /****************** Variables **********************/
-/* Animations that will happen when the page loads 
+/* Animations that will happen when the page loads
  * for the section: header
  * */
 @keyframes moveInLeft {
@@ -88,7 +88,7 @@ body {
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
-  /* 
+  /*
    * this stops the bug of animation shaking.
    * it is a miniscule gripe, but un-proffesional
    * to leave it in.
@@ -164,7 +164,7 @@ body {
  *  puts 10px of padding on the bottom margin.
  *  Those types of classes will be defined here,
  *  so we can have rapid uniform development,
- *  which will make it especially easy to 
+ *  which will make it especially easy to
  *  mold this front end to the future Django
  *  implementations.
  * */
@@ -483,7 +483,7 @@ body {
   /* setting the position of the 3 photos to absolute
    * causes them to stack to the top left corner if its
    * parent element, which in this case will cause
-   * them to stack to the .composition element, 
+   * them to stack to the .composition element,
    * so we need to set that element to relative
    * */
   position: relative; }
@@ -867,7 +867,7 @@ body {
   /* center in viewport */
   /* top: 0, left and right: auto */
   margin: 0 auto;
-  /* This is how your build a custom grid 
+  /* This is how your build a custom grid
    * using float, its the safest for all browsers
    * this code can easily be reused in any other project
    * it is much lighter than using a monolithic
@@ -919,7 +919,7 @@ body {
   /* specify gradient color and image */
   background-image: linear-gradient(to right bottom, rgba(100, 181, 246, 0.8), rgba(66, 165, 245, 0.8), rgba(33, 150, 243, 0.8)), url(../img/hero.jpg);
   background-size: cover;
-  /* set position top so the top of the image 
+  /* set position top so the top of the image
    * sticks in one place
    * when resize happens
    * */
