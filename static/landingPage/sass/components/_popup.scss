@@ -36,6 +36,11 @@
     transition: all .5s .2s;
     //
   }
+   &__msg {
+      margin: auto;
+      font-size: 3.4rem;
+      text-align: center;
+   }
 
   &__left { // these are all child elements in the content box.
     // __content is a table, with the main left and right:
