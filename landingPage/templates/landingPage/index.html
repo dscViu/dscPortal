@@ -704,7 +704,7 @@ Markup uses BEM notation
                 </div>
                 
                 <div class="form__group u-margin-top-small">
-                  <button class=" btn btn--primary">Submit</button>
+                  <button class=" btn btn--primary" id="submit">Submit</button>
                 </div>
 
               </form>
@@ -1011,6 +1011,7 @@ Markup uses BEM notation
        $(".form").submit(function(e){
 	// prevent from normal form behaviour
       	e.preventDefault();
+      	$('body, #submit').css('cursor', 'progress');
     	// serialize the form data
       	var serializedData = $(this).serialize();
       	$.ajax({
@@ -1019,17 +1020,13 @@ Markup uses BEM notation
       		data : serializedData,
       		success : function(response){
 			//reset the form after successful submit
-                $("#name").val('');
-                $("#major").val('');
-                $("#email").val ('');
-                 $("#year1").prop('checked', false);;
-                $("#year2").prop('checked', false);;
-                $("#year3").prop('checked', false);;
-                $("#year4").prop('checked', false);;
+                $("#name, #major, #email").val('');
+                 $("#year1, #year2, #year3, #year4").prop('checked', false);
+                $('body, #submit').css('cursor', 'default');
       			location.href='#popup-10';
       		},
       		error : function(response){
-      			console.log(response)
+      			alert(response);
       		}
 
       	});
