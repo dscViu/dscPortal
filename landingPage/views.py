@@ -15,6 +15,7 @@ imports for the formatting of time and date
 from dateutil.parser import parse as dtparse
 from datetime import datetime as dt
 
+import re # for formatting of all day events
 ''' 
 Regular django specific imports 
 '''
@@ -99,7 +100,8 @@ def index(request):
     # Declaring empty array to hold event name and dates
     event_title_list = []
     event_date_list = []
-    #tmfmt = '%d %B, %H:%M %p'             # Gives you date-time in the format '26 December, 10:00 AM'
+    
+    tmfmt = '%B %d, %I:%M %p'             # Gives you date-time in the format '26 December, 10:00 AM'
 
 
 
@@ -112,15 +114,36 @@ def index(request):
         
         
         # using dtparse to read event start time and dt.strftime to format time
-        #stime = dt.strftime(dtparse(start), format=tmfmt)
+        stime = dt.strftime(dtparse(start), format=tmfmt)
 
         #create object instance for each loop 
         #DSCEvent.objects.create(dscevent_title=str(event['summary']), dscevent_date = stime )
         #DSCEvent.objects.create(dscevent_title=str(event['summary']), dscevent_date = start )
 
         
+        ''' 
+        Storing title of the event, date and time of event for display in template. 
+        
+        All day events display with time of 12:00 AM.
+        So if time is 12:00 AM, the time will not be displayed for the event 
+        '''
         event_title = event['summary']
-        event_date = start
+
+        # Grabbing date and time from string using regex
+            ## Date Regex: "^\w+ \d\d, "  
+            ## Time Regex: "\d\d:\d\d"
+
+        dateOfEvent = re.search("^\w+ \d\d", stime).group()
+        timeOfEvent = re.search("\d\d:\d\d \w\w", stime).group()
+
+        if timeOfEvent == "12:00 AM":      #All day events have Google Calendar time 00:00
+            event_date = dateOfEvent #+ "All Day"
+
+        else:   #Not an all day event
+            event_date = stime
+
+
+        #event_date = start  #non formatted time string 
         
         event_title_list.append(event_title)
         event_date_list.append(event_date)
