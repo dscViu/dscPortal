@@ -686,6 +686,20 @@ body {
     width: 66.6666667%;
     display: table-cell;
     vertical-align: middle; }
+  .popup__back {
+    padding: 3rem 5rem;
+    width: 66.6666667%;
+    display: table-cell;
+      color:ghostwhite;
+    background-image: linear-gradient(to right bottom, rgba(100, 181, 246, 0.8), rgba(66, 165, 245, 0.8), rgba(33, 10, 80, 1)), url(../img/letter_1.png);
+      background-repeat: no-repeat;
+      background-position: center;
+    vertical-align: middle; }
+      .popup__msg {
+      margin: auto;
+      font-size: 3.4rem;
+      text-align: center;
+   }
   .popup__img {
     display: block;
     width: 100%;
@@ -965,7 +979,39 @@ body {
       top: 2rem;
       right: 3rem; } }
 
+.navigation__background {
+  height: 6rem;
+  width: 6rem;
+  border-radius: 50%;
+  position: fixed;
+  opacity: 0;
+  top: 4.5rem;
+  right: 4.5rem;
+  background-image: radial-gradient(#64b5f6, #42a5f5, #2196f3);
+  z-index: 1000;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.5);
+  transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1)}
+  @media (max-width: 56.25em) {
+    .navigation__background {
+      top: 3.5rem;
+      right: 4.5rem; } }
+  @media (max-width: 37.5em) {
+    .navigation__background {
+      top: 2.5rem;
+      right: 3.5rem; } }
 
+
+.navigation__nav {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1500;
+  left: -50%;
+  opacity: 0;
+  width: 0;
+  transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity }
 
 .navigation__list {
   position: absolute;
