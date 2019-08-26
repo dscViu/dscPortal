@@ -41,6 +41,15 @@
       font-size: 3.4rem;
       text-align: center;
    }
+   &__back {
+    padding: 3rem 5rem;
+    width: 66.6666667%;
+    display: table-cell;
+      color:ghostwhite;
+    background-image: linear-gradient(to right bottom, rgba(100, 181, 246, 0.8), rgba(66, 165, 245, 0.8), rgba(33, 10, 80, 1)), url(../img/letter_1.png);
+      background-repeat: no-repeat;
+      background-position: center;
+    vertical-align: middle; }
 
   &__left { // these are all child elements in the content box.
     // __content is a table, with the main left and right:
