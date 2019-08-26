@@ -1,5 +1,4 @@
 /*
-/*
  *  0 - 600px:      Phone
  *  600 - 900px:    tablet portrait
  *  900-1200px:     tablet landscape
@@ -16,7 +15,7 @@
   Order: base " typography > general layout > page layout > components
  * */
 /****************** Variables **********************/
-/* Animations that will happen when the page loads 
+/* Animations that will happen when the page loads
  * for the section: header
  * */
 @keyframes moveInLeft {
@@ -89,7 +88,7 @@ body {
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
-  /* 
+  /*
    * this stops the bug of animation shaking.
    * it is a miniscule gripe, but un-proffesional
    * to leave it in.
@@ -165,7 +164,7 @@ body {
  *  puts 10px of padding on the bottom margin.
  *  Those types of classes will be defined here,
  *  so we can have rapid uniform development,
- *  which will make it especially easy to 
+ *  which will make it especially easy to
  *  mold this front end to the future Django
  *  implementations.
  * */
@@ -484,7 +483,7 @@ body {
   /* setting the position of the 3 photos to absolute
    * causes them to stack to the top left corner if its
    * parent element, which in this case will cause
-   * them to stack to the .composition element, 
+   * them to stack to the .composition element,
    * so we need to set that element to relative
    * */
   position: relative; }
@@ -570,7 +569,7 @@ body {
   border-radius: 2px;
   background-color: rgba(255, 255, 255, 0.8);
   border: none;
-  border-bottom: 3px sold transparent;
+  border-bottom: 3px solid transparent;
   width: 90%;
   display: block;
   transition: all .3s; }
@@ -686,7 +685,7 @@ body {
     width: 66.6666667%;
     display: table-cell;
     vertical-align: middle; }
-  .popup__back {
+    .popup__back {
     padding: 3rem 5rem;
     width: 66.6666667%;
     display: table-cell;
@@ -695,11 +694,6 @@ body {
       background-repeat: no-repeat;
       background-position: center;
     vertical-align: middle; }
-      .popup__msg {
-      margin: auto;
-      font-size: 3.4rem;
-      text-align: center;
-   }
   .popup__img {
     display: block;
     width: 100%;
@@ -727,6 +721,11 @@ body {
     -ms-hyphens: auto;
     -webkit-hyphens: auto;
     hyphens: auto; }
+    .popup__msg {
+      margin: auto;
+      font-size: 3.4rem;
+      text-align: center;
+   }
   .popup:target {
     opacity: 1;
     visibility: visible; }
@@ -868,7 +867,7 @@ body {
   /* center in viewport */
   /* top: 0, left and right: auto */
   margin: 0 auto;
-  /* This is how your build a custom grid 
+  /* This is how your build a custom grid
    * using float, its the safest for all browsers
    * this code can easily be reused in any other project
    * it is much lighter than using a monolithic
@@ -920,7 +919,7 @@ body {
   /* specify gradient color and image */
   background-image: linear-gradient(to right bottom, rgba(100, 181, 246, 0.8), rgba(66, 165, 245, 0.8), rgba(33, 150, 243, 0.8)), url(../img/hero.jpg);
   background-size: cover;
-  /* set position top so the top of the image 
+  /* set position top so the top of the image
    * sticks in one place
    * when resize happens
    * */
@@ -1000,7 +999,6 @@ body {
       top: 2.5rem;
       right: 3.5rem; } }
 
-
 .navigation__nav {
   height: 100vh;
   width: 100%;
@@ -1046,7 +1044,8 @@ body {
   transform: translateX(2rem); }
 
 .navigation__checkbox:checked ~ .navigation__background {
-  transform: scale(80); }
+  transform: scale(80);
+  opacity: 1;}
 
 .navigation__checkbox:checked ~ .navigation__nav {
   opacity: 1;
