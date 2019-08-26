@@ -38,9 +38,9 @@
     height: 6rem;
     width: 6rem;
     border-radius: 50%;
-    opacity: 0;
     position: fixed;
     top: 4.5rem;
+    opacity: 0;
     right: 4.5rem;
     // new gradient
     background-image: radial-gradient($color-primary,
@@ -82,15 +82,6 @@
     // this is for the menu opening animation
     transition: all .8s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity;
   }
-    &__back {
-    padding: 3rem 5rem;
-    width: 66.6666667%;
-    display: table-cell;
-      color:ghostwhite;
-    background-image: linear-gradient(to right bottom, rgba(100, 181, 246, 0.8), rgba(66, 165, 245, 0.8), rgba(33, 10, 80, 1)), url(../img/letter_1.png);
-      background-repeat: no-repeat;
-      background-position: center;
-    vertical-align: middle; }
 
   &__list {
     // this list gets centered inside the nav
