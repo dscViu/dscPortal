@@ -1,0 +1,62 @@
+{% load static %}
+
+<section class="section-updates">
+    <div class="bg-video">
+        <!-- autoplay and loop are needed here -->
+        <video class="bg-video__content" autoplay loop>
+    <source src="{% static 'landingPage/img/video.webm' %}" type="video/webm">
+        Your Browser is not supported
+        </video>
+    </div>
+
+    <div class="u-center-text u-margin-bottom-big">
+        <h2 class="heading-secondary">What we're up to</h2>
+    </div>
+    
+    <!-- First Update -->
+    <div class="row">
+        <div class="updates">
+        <figure class="updates__shape">
+    <img class="updates__img" src="{% static 'landingPage/img/python.jpg' %}"
+            alt="Django Updates">
+            <figcaption class="updates__caption">
+            Django Update
+            </figcaption>
+
+        </figure>
+        <div class="updates__text">
+            <h3 class="heading-tertiary u-margin-bottom-small">
+                {{ event_title_list.0 }}
+            </h3>
+            <p class="paragraph">
+                {{ event_date_list.0 }}
+            </p>
+        </div>
+        </div>
+    </div>
+
+    <!-- Second Update -->
+    <div class="row">
+        <div class="updates">
+        <figure class="updates__shape">
+    <img class="updates__img" src="{% static 'landingPage/img/django.jpg' %}"
+            alt="Django Updates">
+            <figcaption class="updates__caption">
+            Django Update
+            </figcaption>
+
+        </figure>
+        <div class="updates__text">
+            <h3 class="heading-tertiary u-margin-bottom-small">
+            {{ event_title_list.1 }}
+            </h3>
+            <p class="paragraph">
+            {{ event_date_list.1 }}
+            </p>
+        </div>
+        </div>
+    </div>
+    <div class="u-center-text u-margin-top-huge">
+        <a class="btn-text" href="#">See All Events</a>
+    </div>
+</section>
