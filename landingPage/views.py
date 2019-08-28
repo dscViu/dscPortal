@@ -5,6 +5,8 @@ from __future__ import print_function
 import datetime
 import pickle
 import os.path
+
+from django.contrib import messages
 from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
@@ -21,7 +23,7 @@ Regular django specific imports
 '''
 from django.shortcuts import render
 
-from django.http import HttpResponseRedirect #same as HttpResponse but allows for redirect on other page
+from django.http import HttpResponseRedirect, JsonResponse  # same as HttpResponse but allows for redirect on other page
 
 from django.http import HttpResponse #TODO: Could be redundant with HttpResponseRedirect
 from django.template import loader
@@ -192,6 +194,7 @@ def index(request):
         '''
 
         # The ID (and range if required) of spreadsheet.
+
         ''' 
         Sheet/Spreadsheet ID are located in the URL
         ie: https://docs.google.com/spreadsheets/d/spreadsheetId/edit#gid=sheetId
@@ -245,9 +248,9 @@ def index(request):
                 'event_date_list':event_date_list,
                 #'form':form,
                 }
-        
-        return render(request, 'landingPage/index.html', context)
-        #return HttpResponseRedirect('/thanks/') #TODO: Redirect to same page??? Or create thanks page
+        #return render(request, 'landingPage/index.html', context)
+        return JsonResponse({"success": True}, status=200);
+        #return HttpResponse({"success": True}, status=200) #TODO: Redirect to same page??? Or create thanks page
 
     # if a GET (or any other method) #TODO: This may not be req'd here
     else:
@@ -255,5 +258,5 @@ def index(request):
                 'event_title_list':event_title_list,
                 'event_date_list':event_date_list,
                 }
-    
+
     return render(request, 'landingPage/index.html', context)
