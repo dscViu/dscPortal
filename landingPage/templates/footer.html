@@ -1,0 +1,39 @@
+{% load static %}
+
+{% block footer %}
+<footer class="footer">
+  <div class="u-center-text u-margin-bottom-big">
+      <a class="btn-text" href="#header-top">Back to top</a>
+    </div>
+    <div class="footer__logo-box">
+        <img class="footer__logo" src="{% static 'landingPage/img/footer-logo.png' %}" alt="DSC Nanaimo">
+    </div>
+    <div class="row">
+      <div class="col-1-of-2">
+        <div class="footer__navigation">
+          <ul class="footer__list">
+            <li class="li footer__item"><a class="footer__link" href="#">V.I.U CS</a></li>
+            <li class="li footer__item"><a class="footer__link" href="#">Contact us</a></li>
+            <li class="li footer__item"><a class="footer__link" href="#">Our GitLab</a></li>
+            <li class="li footer__item"><a class="footer__link" href="#">MDN Docs</a></li>
+            <li class="li footer__item"><a class="footer__link" href="#">FSF</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-1-of-2">
+        <p class="footer__copyright">
+          Developed by the <a class="footer__link" href="#">VIU DSC</a>.
+          Powered by <a class="footer__link" href="#">Python and Django</a>.
+          Copyright &copy; by the V.I.U Developer Student Club.
+          This is an open-source project, we encourage anyone to clone, 
+          hack-on, change or modify the
+          code and contribute. <a class="footer__link" href="#">use the source luke</a>
+          . Credit for photos goes to the talented
+          photographers over at <a class="footer__link" href="#">unsplash</a>.
+          The colorscheme is a carefully chosen pallete of gradients from
+          <a class="footer__link" href="#">Material Design</a>.
+        </p>
+      </div>
+  </div>
+</footer>
+{% endblock %}
