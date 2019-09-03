@@ -26,6 +26,7 @@
     border-top: 1px solid $color-darkness-light;
     margin-bottom: 3px;
     display: inline-block;
+		width: 80%;
 
     @include respond(tab-port) {
       width: 100%;
@@ -81,4 +82,18 @@
     }
   }
 
+	&__disclaimer {
+    background-color: $color-darkness-dark;
+		margin-top: 2rem;
+    float: right;
+				
+		&--strong {
+			color: $color-primary;			
+		}
+
+    @include respond(tab-port) {
+      width: 100%;
+      float: none;
+    }
+	}
 }

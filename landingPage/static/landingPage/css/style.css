@@ -939,7 +939,8 @@ body {
   .footer__navigation {
     border-top: 1px solid #424242;
     margin-bottom: 3px;
-    display: inline-block; }
+    display: inline-block;
+    width: 80%; }
     @media (max-width: 56.25em) {
       .footer__navigation {
         width: 100%;
@@ -972,6 +973,16 @@ body {
     float: right; }
     @media (max-width: 56.25em) {
       .footer__copyright {
+        width: 100%;
+        float: none; } }
+  .footer__disclaimer {
+    background-color: #212121;
+    margin-top: 2rem;
+    float: right; }
+    .footer__disclaimer--strong {
+      color: #64b5f6; }
+    @media (max-width: 56.25em) {
+      .footer__disclaimer {
         width: 100%;
         float: none; } }
 
