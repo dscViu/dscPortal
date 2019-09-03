@@ -34,7 +34,6 @@
     transform: translate(-50%, -50%) scale(.25);
     // the .2s is a delay
     transition: all .5s .2s;
-    //
   }
 
   &__left { // these are all child elements in the content box.
@@ -56,12 +55,17 @@
     // verticle align helps us align our right content
     vertical-align: middle;
   }
+
   &__back {
     padding: 3rem 5rem;
     width: 66.6666667%;
     display: table-cell;
       color:ghostwhite;
-    background-image: linear-gradient(to right bottom, rgba(100, 181, 246, 0.8), rgba(66, 165, 245, 0.8), rgba(33, 10, 80, 1)), url(../img/letter_1.png);
+    background-image: linear-gradient(to right bottom, 
+    rgba(100, 181, 246, 0.8), 
+    rgba(66, 165, 245, 0.8), 
+    rgba(33, 10, 80, 1)), 
+    url(../img/letter_1.png);
       background-repeat: no-repeat;
       background-position: center;
     vertical-align: middle; }
@@ -88,7 +92,7 @@
 
   &__text {
     font-size: 1.4rem;
-    margin-bottom: 4rem;
+    margin-bottom: 1rem;
 
     // prefix for all browsers
     -moz-column-count: 1;
@@ -107,6 +111,11 @@
     -ms-hyphens: auto;
     -webkit-hyphens: auto;
     hyphens: auto;
+
+    &--break {
+      margin-bottom: 2rem;
+      font-size: 1.2rem;
+    }
   }
   
   &__link--1 {

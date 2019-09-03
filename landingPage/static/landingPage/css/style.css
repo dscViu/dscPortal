@@ -711,7 +711,7 @@ body {
     transform: scale(0.8); }
   .popup__text {
     font-size: 1.4rem;
-    margin-bottom: 4rem;
+    margin-bottom: 1rem;
     -moz-column-count: 1;
     -moz-column-rule: 2;
     -moz-column-gap: 2rem;
@@ -725,6 +725,9 @@ body {
     -ms-hyphens: auto;
     -webkit-hyphens: auto;
     hyphens: auto; }
+    .popup__text--break {
+      margin-bottom: 2rem;
+      font-size: 1.2rem; }
   .popup__link--1:link, .popup__link--1:visited {
     padding: 0 .6rem;
     background-color: #ffb74d;
