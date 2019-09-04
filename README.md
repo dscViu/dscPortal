@@ -70,10 +70,15 @@ This project exists thanks to the people who contribute. You're highly encourage
 
 To contribute to the further development of this project, contact the team leads or open an issue. 
 
+
 ### Lead
-Lenz Paul (@bringbackthedog)[https://github.com/bringbackthedog]
-Matt Williams (@mattcoding4days)[https://github.com/mattcoding4days]
+
+Lenz Paul [@bringbackthedog]( https://github.com/bringbackthedog )
+
+Matt Williams [@mattcoding4days](https://github.com/mattcoding4days)
 
 ### Contributors (in chronological order)
-Bohdan Natsevych (@BohdanNatsevych)[https://github.com/BohdanNatsevych]
-Ezra MacDonald (@macdonaldezra)[https://github.com/macdonaldezra]
+
+Bohdan Natsevych [@BohdanNatsevych](https://github.com/BohdanNatsevych)
+
+Ezra MacDonald [@macdonaldezra](https://github.com/macdonaldezra)
