@@ -64,3 +64,16 @@ $ pip3 install -r requirements.txt
 ```
 $ python3 manage.py runserver
 ```
+
+## Contributors
+This project exists thanks to the people who contribute. You're highly encouraged to partipiate in the sites development.
+
+To contribute to the further development of this project, contact the team leads or open an issue. 
+
+#### Lead
+Lenz Paul @bringbackthedog
+Matt Williams @mattcoding4days
+
+#### Contributors (in chronological order)
+Bohdan Natsevych @BohdanNatsevych
+Ezra MacDonald @macdonaldezra
