@@ -73,12 +73,10 @@ To contribute to the further development of this project, contact the team leads
 
 ### Lead
 
-Lenz Paul [@bringbackthedog]( https://github.com/bringbackthedog )
-
-Matt Williams [@mattcoding4days](https://github.com/mattcoding4days)
+Lenz Paul [@bringbackthedog]( https://github.com/bringbackthedog )  
+Matt Williams [@mattcoding4days](https://github.com/mattcoding4days)  
 
 ### Contributors (in chronological order)
 
-Bohdan Natsevych [@BohdanNatsevych](https://github.com/BohdanNatsevych)
-
-Ezra MacDonald [@macdonaldezra](https://github.com/macdonaldezra)
+Bohdan Natsevych [@BohdanNatsevych](https://github.com/BohdanNatsevych)  
+Ezra MacDonald [@macdonaldezra](https://github.com/macdonaldezra)  
